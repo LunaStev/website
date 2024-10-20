@@ -43,6 +43,11 @@ jobs:
       run: |
         python generate_post.py
 
+    - name: Configure Git
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+
     - name: Commit and Push changes
       run: |
         git add .
