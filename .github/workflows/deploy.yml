@@ -35,10 +35,10 @@ jobs:
     - name: Configure Git
       run: |
         git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@users.noreply.github.com'  # 이 이메일 형식을 사용하면 개인 정보를 보호할 수 있습니다.
+        git config --global user.email 'github-actions@github.com'
 
     - name: Commit and Push changes
       run: |
         git add .
-        git commit -m "Auto Blog" || echo "No changes to commit"  # 커밋할 변화가 없는 경우 에러 방지
-        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/LunaStev/lunastev.github.io
+        git commit -m "Auto Blog"
+        git push origin master
