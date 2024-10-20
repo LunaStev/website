@@ -41,4 +41,4 @@ jobs:
       run: |
         git add .
         git commit -m "Auto Blog" || echo "No changes to commit"  # 커밋할 변화가 없는 경우 에러 방지
-        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/LunaStev/lunastev.github.io.git
+        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/LunaStev/lunastev.github.io
