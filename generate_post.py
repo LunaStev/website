@@ -12,10 +12,13 @@ pytrends = TrendReq(hl='en-US', tz=360)
 
 # Google 트렌드 검색을 통한 인기 주제 가져오기
 def get_trending_topics():
-    pytrends.build_payload(kw_list=[], geo='US', timeframe='now 1-d')  # 1일 동안 인기있는 검색어
-    trending_searches = pytrends.trending_searches(pn='united_states')
-    topics = trending_searches[0].tolist()  # 인기 검색어 리스트
-    return topics
+    try:
+        trending_searches = pytrends.trending_searches(pn='united_states')
+        topics = trending_searches[0].tolist()  # 인기 검색어 리스트
+        return topics
+    except Exception as e:
+        print(f"Error fetching trending topics: {e}")
+        return []
 
 
 # 블로그 포스트 생성 함수
@@ -58,3 +61,4 @@ def git_push():
 
 # 생성된 포스트 푸시
 git_push()
+
