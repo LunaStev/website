@@ -26,7 +26,7 @@ def generate_blog_post(topic):
     prompt = f"Write a detailed blog post about {topic}"
 
     response = openai.Completion.create(
-        engine="text-davinci-003",
+        engine="gpt-3.5-turbo-instruct",
         prompt=prompt,
         max_tokens=500
     )
