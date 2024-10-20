@@ -52,4 +52,4 @@ jobs:
       run: |
         git add .
         git commit -m "Automated blog post"
-        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/<USERNAME>/<REPOSITORY>.git
+        git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/LunaStev/lunastev.github.io.git
