@@ -40,5 +40,5 @@ jobs:
     - name: Commit and Push changes
       run: |
         git add .
-        git commit -m "Auto Blog"
+        git commit -m "Auto"
         git push https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/LunaStev/lunastev.github.io.git
