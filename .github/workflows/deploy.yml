@@ -43,5 +43,5 @@ jobs:
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add .
-        git commit -m "Auto Blog-1"
+        git commit -m "Auto Blog-19"
         git push https://${{ secrets.GH_TOKEN }}@github.com/LunaStev/lunastev.github.io.git
