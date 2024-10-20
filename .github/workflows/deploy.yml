@@ -1,0 +1,51 @@
+name: Auto Blog Post
+
+on:
+  schedule:
+    # 매일 2시간 간격으로 실행
+    - cron: '0 0 * * *'   # 00:00
+    - cron: '0 2 * * *'   # 02:00
+    - cron: '0 4 * * *'   # 04:00
+    - cron: '0 6 * * *'   # 06:00
+    - cron: '0 8 * * *'   # 08:00
+    - cron: '0 10 * * *'  # 10:00
+    - cron: '0 12 * * *'  # 12:00
+    - cron: '0 14 * * *'  # 14:00
+    - cron: '0 16 * * *'  # 16:00
+    - cron: '0 18 * * *'  # 18:00
+    - cron: '0 20 * * *'  # 20:00
+    - cron: '0 22 * * *'  # 22:00
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run blog post script
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        python generate_post.py
+
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'actions@github.com'
+        git add .
+        git commit -m "Automated blog post"
+        git push origin master
