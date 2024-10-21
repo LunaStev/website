@@ -2,11 +2,10 @@ import os
 import time
 from datetime import datetime
 from pytrends.request import TrendReq
-from transformers import pipeline
+from transformers import pipeline, GPTJForCausalLM, AutoTokenizer
 
 # pytrends 설정
 pytrends = TrendReq(hl='en-US', tz=360)
-
 
 # Google 트렌드 검색을 통한 인기 주제 가져오기
 def get_trending_topics():
@@ -18,22 +17,28 @@ def get_trending_topics():
         print(f"Error fetching trending topics: {e}")
         return []
 
+# Hugging Face의 GPT-J 모델 로드 (한 번만 로드)
+tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
+model = GPTJForCausalLM.from_pretrained("EleutherAI/gpt-j-6B")
+generator = pipeline('text-generation', model=model, tokenizer=tokenizer)
 
-# DistilGPT-2 모델 로드
-generator = pipeline('text-generation', model='distilgpt2')
-
-
-# 블로그 포스트 생성
+# GPT-J 모델로 텍스트 생성
 def generate_blog_post(topic):
+    global tokenizer  # tokenizer를 전역 변수로 사용
     prompt = f"Write a detailed blog post about {topic}. Focus on development trends, outdated technologies, useful features, and interesting facts. Please use markdown syntax, include headings, bullet points, and a conclusion for better readability."
 
     try:
-        response = generator(prompt, max_length=1000, num_return_sequences=1)
+        response = generator(
+            prompt,
+            max_length=1000,
+            num_return_sequences=1,
+            truncation=True,  # 트렁케이션 활성화
+            pad_token_id=tokenizer.eos_token_id  # 패딩 토큰 ID 설정
+        )
         return response[0]['generated_text'].strip()
     except Exception as e:
         print(f"Error generating post: {e}")
         return ""
-
 
 # Jekyll 포스트 파일로 저장
 def save_post_to_jekyll(title, content):
@@ -43,7 +48,6 @@ def save_post_to_jekyll(title, content):
     with open(filename, 'w') as f:
         f.write(f"---\nlayout: post\ntitle: \"{title}\"\n---\n\n")
         f.write(f"{content}\n")  # 내용 저장
-
 
 # Google Trends에서 인기 주제 가져오기
 topics = get_trending_topics()
@@ -55,13 +59,11 @@ for topic in topics[:5]:  # 상위 5개의 인기 주제로 글 생성
         save_post_to_jekyll(topic, blog_post)  # 포스트 저장
     time.sleep(10)  # 각 주제 사이에 10초 대기
 
-
 # GitHub에 자동으로 커밋하고 푸시
 def git_push():
     os.system("git add .")
     os.system("git commit -m 'Automated blog post'")
     os.system("git push origin master")
-
 
 # 생성된 포스트 푸시
 git_push()
