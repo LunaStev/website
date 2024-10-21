@@ -12,33 +12,40 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout the repository
-      uses: actions/checkout@v2
+      - name: Checkout the repository
+        uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
-    - name: Install dependencies
-      run: |
-        pip cache purge
-        pip install -r requirements.txt
-        pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+      - name: Cache Python packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
-    - name: Run blog post script
-      run: |
-        python generate_post.py  # OpenAI API 키를 더 이상 사용하지 않으므로 env 필요 없음
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
-    - name: Configure Git
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
+      - name: Run blog post script
+        run: |
+          python generate_post.py  # OpenAI API 키를 더 이상 사용하지 않으므로 env 필요 없음
 
-    - name: Commit and Push changes
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        git add .
-        git commit -m "Auto Blog-19"
-        git push https://${{ secrets.GH_TOKEN }}@github.com/LunaStev/lunastev.github.io.git
+      - name: Configure Git
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+
+      - name: Commit and Push changes
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git add .
+          git commit -m "Auto Blog-19" || echo "No changes to commit"
+          git push https://${{ secrets.GH_TOKEN }}@github.com/LunaStev/lunastev.github.io.git
