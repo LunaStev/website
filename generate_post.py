@@ -2,7 +2,7 @@ import os
 import time
 from datetime import datetime
 from pytrends.request import TrendReq
-from transformers import pipeline, T5Tokenizer, T5ForConditionalGeneration
+from transformers import pipeline, GPTJForCausalLM, AutoTokenizer
 
 # pytrends 설정
 pytrends = TrendReq(hl='en-US', tz=360)
@@ -17,17 +17,17 @@ def get_trending_topics():
         print(f"Error fetching trending topics: {e}")
         return []
 
-# Hugging Face의 GPT-2 모델 로드 (한 번만 로드)
-tokenizer = T5Tokenizer.from_pretrained('t5-large')
-model = T5ForConditionalGeneration.from_pretrained('t5-large')
+# Hugging Face의 GPT-J 모델 로드 (한 번만 로드)
+tokenizer = AutoTokenizer.from_pretrained("EleutherAI/gpt-j-6B")
+model = GPTJForCausalLM.from_pretrained("EleutherAI/gpt-j-6B")
 generator = pipeline('text-generation', model=model, tokenizer=tokenizer)
 
-# GPT-2 모델로 텍스트 생성
+# GPT-J 모델로 텍스트 생성
 def generate_blog_post(topic):
-    prompt = f"Write a detailed blog post about {topic}. Please use markdown syntax, include headings, bullet points, and a conclusion for better readability."
+    prompt = f"Write a detailed blog post about {topic}. Focus on development trends, outdated technologies, useful features, and interesting facts. Please use markdown syntax, include headings, bullet points, and a conclusion for better readability."
 
     try:
-        response = generator(prompt, max_length=500, num_return_sequences=1)
+        response = generator(prompt, max_length=1000, num_return_sequences=1)
         return response[0]['generated_text'].strip()
     except Exception as e:
         print(f"Error generating post: {e}")
@@ -60,4 +60,3 @@ def git_push():
 
 # 생성된 포스트 푸시
 git_push()
-
