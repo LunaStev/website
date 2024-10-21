@@ -23,10 +23,11 @@ jobs:
       - name: Clean up old logs and caches
         run: |
           echo "Cleaning up old logs and caches..."
-          find /home/runner/runners/ -name "*.log" -type f -delete
-          rm -rf ~/.cache/pip/*
-          rm -rf ~/.cache/*
-          rm -rf /tmp/*
+          find /home/runner/runners/ -name "*.log" -type f -delete || true
+          rm -rf ~/.cache/pip/* || true
+          rm -rf ~/.cache/* || true
+          rm -rf /tmp/* || true
+          echo "Disk usage after cleanup:"
           df -h  # 디스크 사용량 확인
 
       - name: Cache Python packages
