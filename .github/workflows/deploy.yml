@@ -20,27 +20,30 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Clean up old caches
+      - name: Clean up old logs and caches
         run: |
-          echo "Cleaning up old caches..."
+          echo "Cleaning up old logs and caches..."
+          find /home/runner/runners/ -name "*.log" -type f -delete
           rm -rf ~/.cache/pip/*
 
       - name: Cache Python packages
         uses: actions/cache@v3
         with:
-          path: ~/.cache/pip
+          path: |
+            ~/.cache/pip
+            **/venv/**  # 가상환경 캐시 (사용하는 경우)
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
-          pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install --no-cache-dir -r requirements.txt
+          pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
       - name: Run blog post script
         run: |
-          python generate_post.py  # OpenAI API 키를 더 이상 사용하지 않으므로 env 필요 없음
+          python generate_post.py
 
       - name: Configure Git
         run: |
