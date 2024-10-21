@@ -24,16 +24,21 @@ generator = pipeline('text-generation', model=model, tokenizer=tokenizer)
 
 # GPT-J 모델로 텍스트 생성
 def generate_blog_post(topic):
-    global tokenizer  # tokenizer를 전역 변수로 사용
-    prompt = f"Write a detailed blog post about {topic}. Focus on development trends, outdated technologies, useful features, and interesting facts. Please use markdown syntax, include headings, bullet points, and a conclusion for better readability."
+    prompt = (
+        f"Write a detailed and lengthy blog post about {topic}. "
+        "Focus on development trends, outdated technologies, useful features, and interesting facts. "
+        "Make sure to include multiple sections with subheadings, detailed explanations, bullet points, and examples. "
+        "Additionally, provide a comprehensive conclusion that summarizes the main points and suggests future trends in this area. "
+        "Use markdown syntax for better readability."
+    )
 
     try:
         response = generator(
             prompt,
-            max_length=1000,
+            max_length=1500,  # 최대 길이를 늘림
             num_return_sequences=1,
-            truncation=True,  # 트렁케이션 활성화
-            pad_token_id=tokenizer.eos_token_id  # 패딩 토큰 ID 설정
+            truncation=True,
+            pad_token_id=tokenizer.eos_token_id
         )
         return response[0]['generated_text'].strip()
     except Exception as e:
