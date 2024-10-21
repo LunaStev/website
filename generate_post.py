@@ -2,7 +2,7 @@ import os
 import time
 from datetime import datetime
 from pytrends.request import TrendReq
-from transformers import pipeline, GPT2Tokenizer, GPT2LMHeadModel
+from transformers import pipeline, T5Tokenizer, T5ForConditionalGeneration
 
 # pytrends 설정
 pytrends = TrendReq(hl='en-US', tz=360)
@@ -18,8 +18,8 @@ def get_trending_topics():
         return []
 
 # Hugging Face의 GPT-2 모델 로드 (한 번만 로드)
-tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-model = GPT2LMHeadModel.from_pretrained('gpt2')
+tokenizer = T5Tokenizer.from_pretrained('t5-large')
+model = T5ForConditionalGeneration.from_pretrained('t5-large')
 generator = pipeline('text-generation', model=model, tokenizer=tokenizer)
 
 # GPT-2 모델로 텍스트 생성
