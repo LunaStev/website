@@ -25,6 +25,9 @@ jobs:
           echo "Cleaning up old logs and caches..."
           find /home/runner/runners/ -name "*.log" -type f -delete
           rm -rf ~/.cache/pip/*
+          rm -rf ~/.cache/*
+          rm -rf /tmp/*
+          df -h  # 디스크 사용량 확인
 
       - name: Cache Python packages
         uses: actions/cache@v3
