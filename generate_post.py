@@ -7,7 +7,6 @@ from transformers import pipeline, GPT2Tokenizer, GPT2LMHeadModel
 # pytrends 설정
 pytrends = TrendReq(hl='en-US', tz=360)
 
-
 # Google 트렌드 검색을 통한 인기 주제 가져오기
 def get_trending_topics():
     try:
@@ -18,17 +17,14 @@ def get_trending_topics():
         print(f"Error fetching trending topics: {e}")
         return []
 
+# Hugging Face의 GPT-2 모델 로드 (한 번만 로드)
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+model = GPT2LMHeadModel.from_pretrained('gpt2')
+generator = pipeline('text-generation', model=model, tokenizer=tokenizer)
 
-# Hugging Face의 GPT-2 모델로 텍스트 생성
+# GPT-2 모델로 텍스트 생성
 def generate_blog_post(topic):
     prompt = f"Write a detailed blog post about {topic}. Please use markdown syntax, include headings, bullet points, and a conclusion for better readability."
-
-    # GPT-2 모델 로드
-    tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
-    model = GPT2LMHeadModel.from_pretrained('gpt2')
-
-    # 텍스트 생성
-    generator = pipeline('text-generation', model=model, tokenizer=tokenizer)
 
     try:
         response = generator(prompt, max_length=500, num_return_sequences=1)
@@ -36,7 +32,6 @@ def generate_blog_post(topic):
     except Exception as e:
         print(f"Error generating post: {e}")
         return ""
-
 
 # Jekyll 포스트 파일로 저장
 def save_post_to_jekyll(title, content):
@@ -46,7 +41,6 @@ def save_post_to_jekyll(title, content):
     with open(filename, 'w') as f:
         f.write(f"---\nlayout: post\ntitle: \"{title}\"\n---\n\n")
         f.write(f"{content}\n")  # 내용 저장
-
 
 # Google Trends에서 인기 주제 가져오기
 topics = get_trending_topics()
@@ -58,13 +52,12 @@ for topic in topics[:5]:  # 상위 5개의 인기 주제로 글 생성
         save_post_to_jekyll(topic, blog_post)  # 포스트 저장
     time.sleep(10)  # 각 주제 사이에 10초 대기
 
-
 # GitHub에 자동으로 커밋하고 푸시
 def git_push():
     os.system("git add .")
     os.system("git commit -m 'Automated blog post'")
     os.system("git push origin master")
 
-
 # 생성된 포스트 푸시
 git_push()
+
