@@ -3,7 +3,7 @@
 /**********************************/
 body {
     color: #666666;
-    background: #F6D155;
+    background: #9055f6;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -15,7 +15,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-    color: #FF6F61;
+    color: #c061ff;
     outline: none;
     text-decoration: none;
 }
@@ -47,7 +47,7 @@ a:focus {
     width: 100%;
     padding: 15px;
     float: left;
-    background: #F6D155;
+    background: #7355f6;
 }
 
 .wrapper .sidebar-header,
@@ -76,7 +76,7 @@ a:focus {
 }
 
 .navbar-expand-md .navbar-nav .nav-link i {
-    color: #FF6F61;
+    color: #ad61ff;
     float: right;
     padding-top: 5px;
     transition: all .3s;
@@ -84,7 +84,7 @@ a:focus {
 
 .navbar-expand-md .navbar-nav .nav-link:hover,
 .navbar-expand-md .navbar-nav .nav-link.active {
-    color: #FF6F61;
+    color: #b361ff;
 }
 
 .navbar-expand-md .navbar-nav .nav-link:hover i,
@@ -112,7 +112,7 @@ a:focus {
         content: "";
         width: 100%;
         height: 30px;
-        background: #F6D155;
+        background: #6a55f6;
         z-index: 1;
     }
     
@@ -208,7 +208,7 @@ a:focus {
         text-align: center;
         font-size: 18px;
         color: #222222;
-        background: #FF6F61;
+        background: #ad61ff;
     }
     
     .sidebar .sidebar-footer a:last-child {
@@ -216,7 +216,7 @@ a:focus {
     }
     
     .sidebar .sidebar-footer a:hover {
-        color: #FF6F61;
+        color: #b361ff;
         background: #ffffff;
     }
     
@@ -285,7 +285,7 @@ a:focus {
 }
 
 .back-to-top i:hover {
-    color: #FF6F61;
+    color: #a861ff;
 }
 
 .back-to-top {
@@ -314,12 +314,12 @@ a:focus {
 
 .header .content-inner {
     padding: 100px 30px;
-    background: url(../img/profile.png) right bottom no-repeat;
+    background: url(../img/1736139711439.jpg) right bottom no-repeat;
     background-size: contain;
 }
 
 .header p {
-    color: #FF6F61;
+    color: #a061ff;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -357,7 +357,7 @@ a:focus {
     position: relative;
     width: 50%;
     padding: 15px 0;
-    color: #FF6F61;
+    color: #c061ff;
     font-size: 20px;
     background: #222222;
     border-radius: 0;
@@ -365,7 +365,7 @@ a:focus {
 
 .large-btn .btn:last-child {
     color: #222222;
-    background: #FF6F61;
+    background: #9b61ff;
 }
 
 .large-btn .btn i {
@@ -414,7 +414,7 @@ a:focus {
     height: 3px;
     bottom: 0;
     left: 0;
-    background: #FF6F61;
+    background: #9b61ff;
 }
 
 
@@ -443,12 +443,12 @@ a:focus {
 .about .btn {
     border-radius: 0;
     color: #222222;
-    background: #FF6F61;
+    background: #ad61ff;
     transition: all .3s;
 }
 
 .about .btn:hover {
-    color: #FF6F61;
+    color: #ad61ff;
     background: #222222;
 }
 
@@ -473,14 +473,14 @@ a:focus {
 
 .about .progress {
     height: 5px;
-    border: 1px solid #FF6F61;
+    border: 1px solid #ad61ff;
     border-radius: 0;
     background: #ffffff;
 }
 
 .about .progress .progress-bar {
     width: 1px;
-    background: #FF6F61;
+    background: #9661ff;
     border-radius: 0;
     transition: 1s;
 }
@@ -500,8 +500,8 @@ a:focus {
     position: relative;
     width: 100%;
     padding: 20px 0 20px 20px;
-    border-left: 1px solid #FF6F61;
-    border-bottom: 1px solid #FF6F61;
+    border-left: 1px solid #b361ff;
+    border-bottom: 1px solid #c561ff;
 }
 
 .education .col-md-6:first-child .edu-col {
@@ -538,14 +538,14 @@ a:focus {
     content: "";
     width: 11px;
     height: 11px;
-    background: #FF6F61;
+    background: #9b61ff;
     top: 5px;
     left: -26px;
     border-radius: 5px;
 }
 
 .education .edu-col span i {
-    color: #FF6F61;
+    color: #ad61ff;
 }
 
 .education .edu-col h3 {
@@ -573,8 +573,8 @@ a:focus {
     position: relative;
     width: 100%;
     padding: 20px 0 20px 20px;
-    border-left: 1px solid #FF6F61;
-    border-bottom: 1px solid #FF6F61;
+    border-left: 1px solid #a061ff;
+    border-bottom: 1px solid #ad61ff;
 }
 
 .experience .col-md-6:first-child .exp-col {
@@ -611,14 +611,14 @@ a:focus {
     content: "";
     width: 11px;
     height: 11px;
-    background: #FF6F61;
+    background: #a861ff;
     top: 5px;
     left: -26px;
     border-radius: 5px;
 }
 
 .experience .exp-col span i {
-    color: #FF6F61;
+    color: #c561ff;
 }
 
 .experience .exp-col h3 {
@@ -664,7 +664,7 @@ a:focus {
 
 .service .srv-col i {
     font-size: 30px;
-    color: #FF6F61;
+    color: #a061ff;
     margin-bottom: 15px;
 }
 
@@ -720,14 +720,14 @@ a:focus {
     font-size: 13px;
     line-height: 15px;
     text-transform: uppercase;
-    border: 1px solid #FF6F61;
+    border: 1px solid #b861ff;
     background: #ffffff;
     transition: all 0.3s ease-in-out;
 }
 
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
-    background: #FF6F61;
+    background: #8961ff;
     color: #222222;
 }
 
@@ -767,7 +767,7 @@ a:focus {
     text-align: center;
     width: 45px;
     height: 35px;
-    background: #FF6F61;
+    background: #a061ff;
     transition: 0.2s linear;
 }
 
@@ -785,7 +785,7 @@ a:focus {
 
 .portfolio .portfolio-item figure .link-preview:hover i,
 .portfolio .portfolio-item figure .link-details:hover i {
-    color: #FF6F61;
+    color: #b861ff;
 }
 
 .portfolio .portfolio-item figure .link-preview {
@@ -809,7 +809,7 @@ a:focus {
     color: #222222;
     font-size: 16px;
     font-weight: 600;
-    background: rgba(255, 111, 97, .5);
+    background: rgba(168, 97, 255, 0.5);
     border-radius: 0;
 }
 
@@ -890,7 +890,7 @@ a:focus {
 }
 
 .review .review-text .ratting i {
-    color: #FF6F61;
+    color: #c561ff;
     font-size: 14px;
 }
 
@@ -909,7 +909,7 @@ a:focus {
     z-index: 1;
     opacity: 0;
     transition: .5s;
-    background: rgba(255, 111, 97, .7);
+    background: rgba(168, 97, 255, 0.7);
 }
 
 .review-slider .slick-prev {
@@ -941,7 +941,7 @@ a:focus {
 .review-slider .slick-prev:focus::before,
 .review-slider .slick-next:hover::before,
 .review-slider .slick-next:focus::before {
-    color: #FF6F61;
+    color: #9661ff;
 }
 
 .review-slider .slick-prev::before,
@@ -970,7 +970,7 @@ a:focus {
 }
 
 .review-slider .slick-dots li.slick-active button:before {
-    color: #FF6F61;
+    color: #9661ff;
 }
 
 .review-slider.slick-slider {
@@ -1002,7 +1002,7 @@ a:focus {
 
 .contact .contact-info p i {
     width: 25px;
-    color: #FF6F61;
+    color: #ca61ff;
 }
 
 .contact .contact-info p a {
@@ -1010,7 +1010,7 @@ a:focus {
 }
 
 .contact .contact-info p a:hover {
-    color: #FF6F61;
+    color: #a861ff;
     text-decoration: none;
 }
 
@@ -1023,7 +1023,7 @@ a:focus {
     height: 35px;
     padding: 5px 0;
     color: #222222;
-    background: #FF6F61;
+    background: #a061ff;
     border-radius: 0;
     margin-top: 15px;
     margin-right: 15px;
@@ -1035,7 +1035,7 @@ a:focus {
 }
 
 .contact .social a:hover {
-    color: #FF6F61;
+    color: #6661ff;
     background: #222222;
 }
 
@@ -1051,18 +1051,18 @@ a:focus {
 
 .contact .form .form-control:focus {
     box-shadow: none;
-    border-color: #FF6F61;
+    border-color: #c561ff;
 }
 
 .contact .form .btn {
     color: #222222;
-    background: #FF6F61;
+    background: #c061ff;
     border-radius: 0;
     transition: all .3s;
 }
 
 .contact .form .btn:hover {
-    color: #FF6F61;
+    color: #b861ff;
     background: #222222;
 }
 
@@ -1094,7 +1094,7 @@ a:focus {
 }
 
 .footer a {
-    color: #FF6F61;
+    color: #a061ff;
     font-weight: 600;
 }
 

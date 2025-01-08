@@ -4,3 +4,4 @@
 *.scss linguist-vendored
 *.php linguist-vendored
 *.rb linguist-vendored
+*.ls linguist-vendored
