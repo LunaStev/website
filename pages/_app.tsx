@@ -4,11 +4,11 @@
 import '@/styles/globals.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { appWithTranslation } from 'next-i18next';
 import type { AppProps } from 'next/app';
+import { appWithTranslation } from 'next-i18next';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
-};
+}
 
 export default appWithTranslation(MyApp);

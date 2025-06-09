@@ -31,14 +31,11 @@ export default function Home() {
                 <h1>{t('greeting')}</h1>
                 <p>{t('intro')}</p>
 
-                <Button
-                    variant="primary"
-                    className="mt-3"
-                    as={Link}
-                    href="mailto:lunastev@gurmstudios.com"
-                >
-                    {t('contactButton')}
-                </Button>
+                <Link href="mailto:lunastev@gurmstudios.com" passHref legacyBehavior>
+                    <Button variant="primary" className="mt-3">
+                        {t('contactButton')}
+                    </Button>
+                </Link>
             </Container>
         </div>
     );
