@@ -1,0 +1,7 @@
+*.js linguist-vendored
+*.html linguist-vendored
+*.css linguist-vendored
+*.scss linguist-vendored
+*.php linguist-vendored
+*.rb linguist-vendored
+*.ls linguist-vendored
