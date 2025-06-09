@@ -1,3 +1,6 @@
+// Copyright (c) 2025 Jeon Yeongjae
+// Licensed under the Portfolio License 1.0
+
 interface Props {
     currentTheme: 'light' | 'dark' | 'purple';
     onChange: (theme: 'light' | 'dark' | 'purple') => void;

@@ -1,3 +1,6 @@
+// Copyright (c) 2025 Jeon Yeongjae
+// Licensed under the Portfolio License 1.0
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Image from 'next/image';

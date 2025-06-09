@@ -1,3 +1,6 @@
+// Copyright (c) 2025 Jeon Yeongjae
+// Licensed under the Portfolio License 1.0
+
 import { Container, Navbar as BsNavbar, Nav } from 'react-bootstrap';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
