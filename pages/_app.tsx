@@ -11,4 +11,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />;
 }
 
-export default appWithTranslation(MyApp as any);
+export default appWithTranslation(MyApp);
