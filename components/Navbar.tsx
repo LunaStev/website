@@ -15,11 +15,20 @@ export default function Navbar({ currentTheme, onThemeChange }: Props) {
         <BsNavbar bg="light" expand="lg" className="py-3">
             <Container className="d-flex justify-content-between align-items-center">
                 <BsNavbar.Brand href="/" className="fw-bold">
-                    Yeongjae
+                    LunaStev
                 </BsNavbar.Brand>
                 <Nav className="d-flex align-items-center gap-3">
                     <ThemeToggle currentTheme={currentTheme} onChange={onThemeChange} />
                     <LanguageSwitcher />
+                    <div>
+                        <iframe
+                            src="https://github.com/sponsors/LunaStev/button"
+                            title="Sponsor LunaStev"
+                            height="32"
+                            width="114"
+                            style={{ border: 0, borderRadius: '6px' }}
+                        ></iframe>
+                    </div>
                 </Nav>
             </Container>
         </BsNavbar>
