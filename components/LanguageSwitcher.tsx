@@ -12,7 +12,7 @@ export default function LanguageSwitcher() {
     const { locale, pathname, asPath, query } = router;
 
     return (
-        <div style={{ display: 'flex', gap: '8px' }}>
+        <div className="language-switcher d-flex gap-2">
             {languages.map((lng) => (
                 <Link
                     key={lng}

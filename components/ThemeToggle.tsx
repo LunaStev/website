@@ -8,7 +8,7 @@ interface Props {
 
 export default function ThemeToggle({ currentTheme, onChange }: Props) {
     return (
-        <div className="d-flex gap-2">
+        <div className="theme-toggle d-flex gap-2">
             <button
                 onClick={() => onChange('light')}
                 className={`btn btn-sm ${currentTheme === 'light' ? 'btn-secondary' : 'btn-outline-secondary'}`}
