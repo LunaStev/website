@@ -4,7 +4,7 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import { Container, Button } from 'react-bootstrap';
 import Navbar from '../components/Navbar';
 import Link from 'next/link';
@@ -16,10 +16,10 @@ export default function Home() {
     const themeClass = `theme-${theme}`;
     useEffect(() => {
         document.body.className = '';
-        document.body.classList.add(`theme-${theme}`);
+        document.body.classList.add(themeClass);
     }, [theme]);
-    return (
 
+    return (
         <div className={themeClass}>
             <Head>
                 <title>{t('metaTitle')}</title>
@@ -36,6 +36,21 @@ export default function Home() {
                         {t('contactButton')}
                     </Button>
                 </Link>
+
+                <h2 className="section-title mt-5">{t('projectsTitle')}</h2>
+                <ul className="project-list text-start mx-auto mt-4">
+                    <li><strong>Wave</strong><span> — {t('projectWave')}</span></li>
+                    <li><strong>Whale</strong><span> — {t('projectWhale')}</span></li>
+                    <li><strong>Vex</strong><span> — {t('projectVex')}</span></li>
+                    <li><strong>WSON</strong><span> — {t('projectWSON')}</span></li>
+                    <li><strong>OpenAI C</strong><span> — {t('projectOpenAIC')}</span></li>
+                </ul>
+
+                <h2 className="section-title mt-5">{t('awesomeTitle')}</h2>
+                <ul className="project-list text-start mx-auto mt-4">
+                    <li><strong>Awesome Wave</strong><span> — {t('awesomeWave')}</span></li>
+                    <li><strong>Awesome OpenAI</strong><span> — {t('awesomeOpenAI')}</span></li>
+                </ul>
             </Container>
         </div>
     );

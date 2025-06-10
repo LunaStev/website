@@ -3,6 +3,13 @@ body {
   padding: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
 }
 
 .theme-light {
@@ -20,6 +27,40 @@ body {
   color: #f0eaff !important;
 }
 
-body {
-  transition: background-color 0.3s ease, color 0.3s ease;
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  border-bottom: 2px solid currentColor;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.project-list {
+  list-style: none;
+  padding-left: 0;
+  max-width: 800px;
+}
+
+.project-list li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.project-list li::before {
+  content: "🚀";
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+}
+
+.btn-primary {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }

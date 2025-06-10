@@ -3,5 +3,14 @@
   "metaDescription": "Portfolio and personal introduction of Jeon Yeongjae",
   "greeting": "Hi, I'm Jeon Yeongjae",
   "intro": "I'm the developer of the Wave language and work on various projects.",
-  "contactButton": "Contact Me"
+  "contactButton": "Contact Me",
+  "projectsTitle": "Projects",
+  "projectWave": "A general-purpose low-level programming language aiming to replace C and Assembly, with strong abstraction and a powerful standard library.",
+  "projectWhale": "A compiler toolchain designed for Wave, modular and aimed to replace LLVM.",
+  "projectVex": "The package manager for Wave, using WSON instead of JSON and supporting multi-OS builds.",
+  "projectWSON": "A fast and simple serialization format created for Wave to replace JSON.",
+  "projectOpenAIC": "A C library to easily use OpenAI APIs.",
+  "awesomeTitle": "Awesome Projects",
+  "awesomeWave": "A curated list of tools, libraries, and tutorials related to Wave.",
+  "awesomeOpenAI": "A curated list of OpenAI API-related resources and projects."
 }

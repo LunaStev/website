@@ -3,5 +3,14 @@
   "metaDescription": "전영재의 포트폴리오 및 자기소개 웹사이트",
   "greeting": "안녕하세요, 전영재입니다",
   "intro": "저는 Wave 언어를 개발하고 다양한 프로젝트를 진행하고 있는 개발자입니다.",
-  "contactButton": "연락하기"
+  "contactButton": "연락하기",
+  "projectsTitle": "프로젝트",
+  "projectWave": "C와 어셈블리를 대체하기 위해 설계된 범용 저수준 프로그래밍 언어로, 강력한 추상화와 표준 라이브러리를 갖추고 있습니다.",
+  "projectWhale": "Wave를 위해 설계된 모듈형 컴파일러 툴체인으로, LLVM을 대체하는 것을 목표로 합니다.",
+  "projectVex": "Wave의 패키지 매니저로, JSON 대신 WSON을 사용하며 다중 OS 빌드를 지원합니다.",
+  "projectWSON": "Wave를 위해 만들어진 빠르고 간단한 직렬화 포맷으로, JSON을 대체합니다.",
+  "projectOpenAIC": "OpenAI API를 쉽게 사용할 수 있도록 만든 C 언어용 라이브러리입니다.",
+  "awesomeTitle": "추천 프로젝트",
+  "awesomeWave": "Wave 관련 도구, 라이브러리, 튜토리얼을 엄선하여 정리한 목록입니다.",
+  "awesomeOpenAI": "OpenAI API와 관련된 리소스 및 프로젝트를 엄선하여 정리한 목록입니다."
 }
