@@ -37,6 +37,8 @@ export default function Home() {
                     </Button>
                 </Link>
 
+                <br>
+
                 <h2 className="section-title mt-5">{t('projectsTitle')}</h2>
                 <div className="project-grid">
                     <div className="project-card"><h3>Wave</h3><p>{t('projectWave')}</p></div>
