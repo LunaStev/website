@@ -145,6 +145,8 @@ body {
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: -0.5px;
+  color: inherit !important;
+  transition: color 0.3s ease;
 }
 
 /* ThemeToggle 버튼 통일 디자인 */

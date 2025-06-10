@@ -15,7 +15,7 @@ export default function Navbar({ currentTheme, onThemeChange }: Props) {
         <BsNavbar expand="lg" className="custom-navbar">
             <Container className="d-flex justify-content-between align-items-center">
                 <BsNavbar.Brand href="/" className="navbar-brand-text">
-                    LunaStev
+                    <span className="text-theme">LunaStev</span>
                 </BsNavbar.Brand>
                 <Nav className="d-flex align-items-center gap-3">
                     <ThemeToggle currentTheme={currentTheme} onChange={onThemeChange} />
