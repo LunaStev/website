@@ -3,6 +3,7 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import Image from 'next/image';
 
 const languages = ['en', 'ko', 'es'];
