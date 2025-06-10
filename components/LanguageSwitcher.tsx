@@ -8,6 +8,12 @@ import Image from 'next/image';
 
 const languages = ['en', 'ko', 'es'];
 
+const languageLabels: Record<string, string> = {
+    en: 'English',
+    ko: '한국어',
+    es: 'Español',
+};
+
 export default function LanguageSwitcher() {
     const router = useRouter();
     const { locale, pathname, asPath, query } = router;
@@ -19,7 +25,7 @@ export default function LanguageSwitcher() {
         <div className="lang-dropdown" onClick={() => setOpen(!open)}>
             <div className="lang-selected">
                 <Image src={`/flags/${current}.png`} alt={current} width={20} height={14} />
-                <span>{current.toUpperCase()}</span>
+                <span>{languageLabels[current] || current.toUpperCase()}</span>
                 <span className="dropdown-icon">▾</span>
             </div>
             {open && (
@@ -34,7 +40,7 @@ export default function LanguageSwitcher() {
                         >
                             <a className={`lang-item ${current === lng ? 'active' : ''}`} onClick={() => setOpen(false)}>
                                 <Image src={`/flags/${lng}.png`} alt={lng} width={20} height={14} />
-                                <span>{lng.toUpperCase()}</span>
+                                <span>{languageLabels[lng] || lng.toUpperCase()}</span>
                             </a>
                         </Link>
                     ))}
