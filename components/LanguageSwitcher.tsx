@@ -10,28 +10,35 @@ const languages = ['en', 'ko', 'es'];
 export default function LanguageSwitcher() {
     const router = useRouter();
     const { locale, pathname, asPath, query } = router;
+    const [open, setOpen] = useState(false);
+
+    const current = locale || 'en';
 
     return (
-        <div className="language-switcher">
-            {languages.map((lng) => (
-                <Link
-                    key={lng}
-                    href={{ pathname, query }}
-                    as={asPath}
-                    locale={lng}
-                    legacyBehavior
-                >
-                    <a className={`lang-btn ${locale === lng ? 'active' : ''}`}>
-                        <Image
-                            src={`/flags/${lng}.png`}
-                            alt={lng}
-                            width={20}
-                            height={14}
-                        />
-                        <span className="lang-code">{lng.toUpperCase()}</span>
-                    </a>
-                </Link>
-            ))}
+        <div className="lang-dropdown" onClick={() => setOpen(!open)}>
+            <div className="lang-selected">
+                <Image src={`/flags/${current}.png`} alt={current} width={20} height={14} />
+                <span>{current.toUpperCase()}</span>
+                <span className="dropdown-icon">▾</span>
+            </div>
+            {open && (
+                <div className="lang-menu">
+                    {languages.map((lng) => (
+                        <Link
+                            key={lng}
+                            href={{ pathname, query }}
+                            as={asPath}
+                            locale={lng}
+                            legacyBehavior
+                        >
+                            <a className={`lang-item ${current === lng ? 'active' : ''}`} onClick={() => setOpen(false)}>
+                                <Image src={`/flags/${lng}.png`} alt={lng} width={20} height={14} />
+                                <span>{lng.toUpperCase()}</span>
+                            </a>
+                        </Link>
+                    ))}
+                </div>
+            )}
         </div>
     );
 }

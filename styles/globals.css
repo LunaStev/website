@@ -249,3 +249,65 @@ body {
 .lang-code {
   font-family: 'Courier New', monospace;
 }
+.lang-dropdown {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lang-selected {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: inherit;
+}
+
+.dropdown-icon {
+  margin-left: 0.3rem;
+  opacity: 0.6;
+  font-size: 0.7rem;
+}
+
+.lang-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: rgba(30, 30, 30, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 12px;
+  padding: 0.5rem;
+  max-height: 280px;
+  width: max-content;
+  overflow-y: auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.lang-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-item.active {
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+}
