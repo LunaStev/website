@@ -212,3 +212,40 @@ body {
 .language-switcher a:hover img {
   transform: scale(1.1);
 }
+
+.language-switcher {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.lang-btn.active {
+  border: 1px solid currentColor;
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.lang-code {
+  font-family: 'Courier New', monospace;
+}
