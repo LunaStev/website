@@ -37,7 +37,7 @@ export default function Home() {
                     </Button>
                 </Link>
 
-                <br>
+                <div style={{ height: '3rem' }} />
 
                 <h2 className="section-title mt-5">{t('projectsTitle')}</h2>
                 <div className="project-grid">
