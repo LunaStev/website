@@ -1,5 +1,5 @@
 // Copyright (c) 2025 Jeon Yeongjae
-// Licensed under the LunaStev License 1.0
+// Licensed under the LunaStev License 2.0
 
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';

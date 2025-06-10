@@ -1,38 +1,53 @@
 // Copyright (c) 2025 Jeon Yeongjae
-// Licensed under the LunaStev License 1.0
+// Licensed under the LunaStev License 2.0
 
 import Head from 'next/head';
+import Navbar from '../components/Navbar';
+import { useState, useEffect } from 'react';
 
 export default function LicensePage() {
+    const [theme, setTheme] = useState<'light' | 'dark' | 'purple'>('light');
+    const themeClass = `theme-${theme}`;
+
+    useEffect(() => {
+        document.body.className = '';
+        document.body.classList.add(themeClass);
+    }, [themeClass]);
+
     return (
-        <div className="theme-light license-page">
+        <div className={themeClass}>
             <Head>
                 <title>LunaStev License 1.0</title>
                 <meta name="description" content="The official license for LunaStev's personal portfolio code." />
             </Head>
 
-            <main className="license-container">
-                <h1 className="license-title">LunaStev License 1.0</h1>
-                <p className="license-subtitle">
-                    This is the official license that applies to the source code of Jeon Yeongjae's personal portfolio website.
-                </p>
-                <pre className="license-box">
-{`LunaStev License 1.0
+            <Navbar currentTheme={theme} onThemeChange={setTheme} />
 
-Copyright (c) 2025 Jeon Yeongjae (LunaStev)
+            <main className="license-main">
+                <div className="license-wrapper">
+                    <h1 className="license-title">LunaStev License</h1>
+                    <p className="license-description">
+                        This is the official license that applies to the source code.
+                    </p>
 
-This source code is part of the personal portfolio website of Jeon Yeongjae.
-It is made publicly available strictly for reference and educational purposes.
+                    <section className="license-multi-section">
+                        <div className="license-version-card">
+                            <h2>LunaStev License 1.0</h2>
+                            <p className="license-version-description">
+                                Personal portfolio source code – view only. Redistribution and reuse strictly prohibited.
+                            </p>
+                            <Link href="/license/1.0" className="license-link">View Full Text →</Link>
+                        </div>
 
-Permission is granted to view and study the code.
-However, redistribution, commercial use, or the creation of derivative works—
-in whole or in part—is not permitted without explicit prior written consent.
-
-This code is not licensed under any standard open-source license (e.g., MIT, GPL, MPL),
-and is not intended for reuse in any software product or project.
-
-For licensing inquiries, contact: lunastev@gurmstudios.com`}
-                </pre>
+                        <div className="license-version-card">
+                            <h2>LunaStev License 2.0</h2>
+                            <p className="license-version-description">
+                                General-purpose reference license. Applies to demos, docs, and example code by LunaStev.
+                            </p>
+                            <Link href="/license/2.0" className="license-link">View Full Text →</Link>
+                        </div>
+                    </section>
+                </div>
             </main>
         </div>
     );

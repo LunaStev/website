@@ -1,5 +1,5 @@
 // Copyright (c) 2025 Jeon Yeongjae
-// Licensed under the LunaStev License 1.0
+// Licensed under the LunaStev License 2.0
 
 interface Props {
     currentTheme: 'light' | 'dark' | 'purple';
