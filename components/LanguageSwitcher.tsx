@@ -12,7 +12,7 @@ export default function LanguageSwitcher() {
     const { locale, pathname, asPath, query } = router;
 
     return (
-        <div className="language-switcher d-flex gap-2">
+        <div className="language-switcher">
             {languages.map((lng) => (
                 <Link
                     key={lng}
@@ -21,14 +21,14 @@ export default function LanguageSwitcher() {
                     locale={lng}
                     legacyBehavior
                 >
-                    <a>
+                    <a className={`lang-btn ${locale === lng ? 'active' : ''}`}>
                         <Image
                             src={`/flags/${lng}.png`}
                             alt={lng}
-                            width={24}
-                            height={16}
-                            style={{ border: locale === lng ? '2px solid black' : 'none' }}
+                            width={20}
+                            height={14}
                         />
+                        <span className="lang-code">{lng.toUpperCase()}</span>
                     </a>
                 </Link>
             ))}
