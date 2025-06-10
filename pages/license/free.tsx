@@ -35,7 +35,7 @@ export default function LicenseFreePage() {
 
                         <p>
                             This license applies to selected source code or assets made publicly available by Jeon Yeongjae (LunaStev),
-                            such as small components, templates, utilities, and demos marked explicitly as "Free".
+                            such as small components, templates, utilities, and demos marked explicitly as &quot;Free&quot;.
                         </p>
 
                         <p><u>Under this license, you are permitted to:</u></p>
@@ -53,7 +53,7 @@ export default function LicenseFreePage() {
 
                         <p>
                             This is a proprietary license, not governed by open-source licenses such as MIT, GPL, or MPL.
-                            Attribution must include: <strong>"Created by Jeon Yeongjae (LunaStev)"</strong>
+                            Attribution must include: <strong>&quot;Created by Jeon Yeongjae (LunaStev)&quot;</strong>
                         </p>
 
                         <p>For questions or permissions beyond this license, contact: <a href="mailto:lunastev@gurmstudios.com">lunastev@gurmstudios.com</a></p>
