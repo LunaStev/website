@@ -30,6 +30,9 @@ export default function Navbar({ currentTheme, onThemeChange }: Props) {
                         ></iframe>
                     </div>
                 </Nav>
+                <Nav.Link href="/license" className="d-none d-md-block">
+                    License
+                </Nav.Link>
             </Container>
         </BsNavbar>
     );
