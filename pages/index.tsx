@@ -17,7 +17,7 @@ export default function Home() {
     useEffect(() => {
         document.body.className = '';
         document.body.classList.add(themeClass);
-    }, [theme]);
+    }, [themeClass]);
 
     return (
         <div className={themeClass}>
