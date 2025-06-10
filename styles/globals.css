@@ -129,24 +129,57 @@ body {
   opacity: 0.6;
 }
 
+/* Navbar container 전체 */
 .custom-navbar {
-  padding: 1rem 0;
-  background: transparent !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  padding: 1rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: sticky;
   top: 0;
   z-index: 999;
 }
 
+/* 브랜드 로고 (좌측 LunaStev) */
 .navbar-brand-text {
   font-size: 1.4rem;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
   color: inherit !important;
   transition: color 0.3s ease;
+}
+
+.text-theme {
+  color: inherit !important;
+}
+
+/* 우측 Nav (토글, 언어, sponsor) */
+.custom-navbar .nav {
+  gap: 1rem;
+  align-items: center;
+}
+
+/* GitHub sponsor 버튼을 더 부드럽게 맞추기 */
+.custom-navbar iframe {
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.custom-navbar iframe:hover {
+  transform: scale(1.02);
+}
+
+/* 반응형 조정 */
+@media (max-width: 768px) {
+  .custom-navbar .nav {
+    gap: 0.5rem;
+  }
+
+  .navbar-brand-text {
+    font-size: 1.2rem;
+  }
 }
 
 /* ThemeToggle 버튼 통일 디자인 */
