@@ -38,19 +38,19 @@ export default function Home() {
                 </Link>
 
                 <h2 className="section-title mt-5">{t('projectsTitle')}</h2>
-                <ul className="project-list text-start mx-auto mt-4">
-                    <li><strong>Wave</strong><span> — {t('projectWave')}</span></li>
-                    <li><strong>Whale</strong><span> — {t('projectWhale')}</span></li>
-                    <li><strong>Vex</strong><span> — {t('projectVex')}</span></li>
-                    <li><strong>WSON</strong><span> — {t('projectWSON')}</span></li>
-                    <li><strong>OpenAI C</strong><span> — {t('projectOpenAIC')}</span></li>
-                </ul>
+                <div className="project-grid">
+                    <div className="project-card"><h3>Wave</h3><p>{t('projectWave')}</p></div>
+                    <div className="project-card"><h3>Whale</h3><p>{t('projectWhale')}</p></div>
+                    <div className="project-card"><h3>Vex</h3><p>{t('projectVex')}</p></div>
+                    <div className="project-card"><h3>WSON</h3><p>{t('projectWSON')}</p></div>
+                    <div className="project-card"><h3>OpenAI C</h3><p>{t('projectOpenAIC')}</p></div>
+                </div>
 
                 <h2 className="section-title mt-5">{t('awesomeTitle')}</h2>
-                <ul className="project-list text-start mx-auto mt-4">
-                    <li><strong>Awesome Wave</strong><span> — {t('awesomeWave')}</span></li>
-                    <li><strong>Awesome OpenAI</strong><span> — {t('awesomeOpenAI')}</span></li>
-                </ul>
+                <div className="project-grid">
+                    <div className="project-card"><h3>Awesome Wave</h3><p>{t('awesomeWave')}</p></div>
+                    <div className="project-card"><h3>Awesome OpenAI</h3><p>{t('awesomeOpenAI')}</p></div>
+                </div>
             </Container>
         </div>
     );
