@@ -44,7 +44,7 @@ export default function LicenseV2Page() {
                         </p>
 
                         <p>
-                            This license applies to all code marked with the "LunaStev License" header,
+                            This license applies to all code marked with the &quot;LunaStev License&quot; header,
                             including but not limited to examples, demos, and documentation-related files
                             authored by Jeon Yeongjae (LunaStev).
                         </p>

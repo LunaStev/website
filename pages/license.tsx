@@ -4,6 +4,7 @@
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 export default function LicensePage() {
     const [theme, setTheme] = useState<'light' | 'dark' | 'purple'>('light');
