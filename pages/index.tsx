@@ -6,7 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Button, Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Navbar from '../components/Navbar';
 
 export default function Home() {
