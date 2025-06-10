@@ -41,11 +41,11 @@ export default function LicensePage() {
                         </div>
 
                         <div className="license-version-card">
-                            <h2>LunaStev License 2.0</h2>
+                            <h2>LunaStev License Free</h2>
                             <p className="license-version-description">
-                                General-purpose reference license. Applies to demos, docs, and example code by LunaStev.
+                                Limited-use license for selected public components. Allows personal and commercial use with attribution.
                             </p>
-                            <Link href="/license/2.0" className="license-link">View Full Text →</Link>
+                            <Link href="/license/free" className="license-link">View Full Text →</Link>
                         </div>
                     </section>
                 </div>
