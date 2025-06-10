@@ -20,6 +20,9 @@ export default function Navbar({ currentTheme, onThemeChange }: Props) {
                 <Nav className="d-flex align-items-center gap-3">
                     <ThemeToggle currentTheme={currentTheme} onChange={onThemeChange} />
                     <LanguageSwitcher />
+                    <Nav.Link href="/license" className="d-none d-md-block">
+                        License
+                    </Nav.Link>
                     <div className="d-none d-md-block">
                         <iframe
                             src="https://github.com/sponsors/LunaStev/button"
@@ -30,9 +33,6 @@ export default function Navbar({ currentTheme, onThemeChange }: Props) {
                         ></iframe>
                     </div>
                 </Nav>
-                <Nav.Link href="/license" className="d-none d-md-block">
-                    License
-                </Nav.Link>
             </Container>
         </BsNavbar>
     );
