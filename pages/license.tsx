@@ -3,10 +3,12 @@
 
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
+import { useTranslation } from 'next-i18next';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function LicensePage() {
+    const { t } = useTranslation('common');
     const [theme, setTheme] = useState<'light' | 'dark' | 'purple'>('light');
     const themeClass = `theme-${theme}`;
 
@@ -28,32 +30,32 @@ export default function LicensePage() {
                 <div className="license-wrapper">
                     <h1 className="license-title">LunaStev License</h1>
                     <p className="license-description">
-                        This is the official license that applies to the source code.
+                        {t('license-description')}
                     </p>
 
                     <section className="license-multi-section">
                         <div className="license-version-card">
-                            <h2>LunaStev License 1.0</h2>
                             <p className="license-version-description">
-                                Personal portfolio source code – view only. Redistribution and reuse strictly prohibited.
+                                {t('license-1.0-description')}
                             </p>
-                            <Link href="/license/1.0" className="license-link">View Full Text →</Link>
+                            <h2>LunaStev License 1.0</h2>
+                            <Link href="/license/1.0" className="license-link">{t('license-link')}</Link>
                         </div>
 
                         <div className="license-version-card">
                             <h2>LunaStev License 2.0</h2>
                             <p className="license-version-description">
-                                General-purpose reference license. Applies to demos, docs, and example code by LunaStev.
+                                {t('license-2.0-description')}
                             </p>
-                            <Link href="/license/2.0" className="license-link">View Full Text →</Link>
+                            <Link href="/license/2.0" className="license-link">{t('license-link')}</Link>
                         </div>
 
                         <div className="license-version-card">
                             <h2>LunaStev License Free</h2>
                             <p className="license-version-description">
-                                Limited-use license for selected public components. Allows personal and commercial use with attribution.
+                                {t('license-free-description')}
                             </p>
-                            <Link href="/license/free" className="license-link">View Full Text →</Link>
+                            <Link href="/license/free" className="license-link">{t('license-link')}</Link>
                         </div>
                     </section>
                 </div>

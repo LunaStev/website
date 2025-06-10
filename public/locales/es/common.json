@@ -12,5 +12,10 @@
   "projectOpenAIC": "Una biblioteca en C para usar fácilmente las API de OpenAI.",
   "awesomeTitle": "Proyectos Destacados",
   "awesomeWave": "Una lista curada de herramientas, bibliotecas y tutoriales relacionados con Wave.",
-  "awesomeOpenAI": "Una lista curada de recursos y proyectos relacionados con las API de OpenAI."
+  "awesomeOpenAI": "Una lista curada de recursos y proyectos relacionados con las API de OpenAI.",
+  "license-description": "Esta es la licencia oficial que se aplica al código fuente.",
+  "license-link": "Ver texto completo →",
+  "license-1.0-description": "Código fuente del portafolio personal – solo lectura. Redistribución y reutilización estrictamente prohibidas.",
+  "license-2.0-description": "Licencia de referencia de propósito general. Se aplica a demostraciones, documentación y código de ejemplo por LunaStev.",
+  "license-free-description": "Licencia de uso limitado para componentes públicos seleccionados. Permite uso personal y comercial con atribución."
 }

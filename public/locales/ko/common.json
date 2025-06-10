@@ -12,5 +12,10 @@
   "projectOpenAIC": "OpenAI API를 쉽게 사용할 수 있도록 만든 C 언어용 라이브러리입니다.",
   "awesomeTitle": "추천 프로젝트",
   "awesomeWave": "Wave 관련 도구, 라이브러리, 튜토리얼을 엄선하여 정리한 목록입니다.",
-  "awesomeOpenAI": "OpenAI API와 관련된 리소스 및 프로젝트를 엄선하여 정리한 목록입니다."
+  "awesomeOpenAI": "OpenAI API와 관련된 리소스 및 프로젝트를 엄선하여 정리한 목록입니다.",
+  "license-description": "이 소스 코드에 적용되는 공식 라이선스입니다.",
+  "license-link": "전체 내용 보기 →",
+  "license-1.0-description": "개인 포트폴리오 소스 코드 – 열람 전용. 재배포 및 재사용은 엄격히 금지됩니다.",
+  "license-2.0-description": "범용 참고용 라이선스. LunaStev가 제공하는 데모, 문서, 예제 코드에 적용됩니다.",
+  "license-free-description": "일부 공개 컴포넌트에 대한 제한적 사용 라이선스. 출처 표시 시 개인 및 상업적 사용이 허용됩니다."
 }
