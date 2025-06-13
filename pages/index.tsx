@@ -26,8 +26,7 @@ export default function Home() {
             descriptionKey: 'projectWave',
             links: [
                 { label: 'GitHub', url: 'https://github.com/LunaStev/Wave' },
-                { label: 'Site', url: 'https://wave-lang.dev' },
-                { label: 'Docs', url: 'https://docs.wave-lang.dev' }
+                { label: 'Site', url: 'https://wave-lang.dev' }
             ]
         },
         {
