@@ -2,10 +2,6 @@
 // Licensed under the LunaStev License 2.0
 
 import Head from 'next/head';
-import Navbar from '../../components/Navbar';
-import { useState, useEffect } from 'react';
-
-import Head from 'next/head';
 import Layout from '../../components/Layout';
 import { useState, useEffect } from 'react';
 
