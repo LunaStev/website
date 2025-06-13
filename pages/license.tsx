@@ -2,13 +2,6 @@
 // Licensed under the LunaStev License 2.0
 
 import Head from 'next/head';
-import Navbar from '../components/Navbar';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-
-import Head from 'next/head';
 import Layout from '../components/Layout';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
