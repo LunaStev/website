@@ -296,6 +296,10 @@ body {
   z-index: 1000;
 }
 
+.lang-menu .language-label {
+  color: white !important;
+}
+
 .lang-item {
   display: flex;
   align-items: center;
