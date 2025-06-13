@@ -56,6 +56,15 @@ export default function Home() {
                     </div>
                 </section>
 
+                <section className="section">
+                    <h2 className="section-title">📄 {t('papersTitle')}</h2>
+                    <div className="card-grid">
+                        <div className="card">
+                            <p>{t('papersPending')}</p>
+                        </div>
+                    </div>
+                </section>
+
                 <footer className="footer">
                     <p>© 2025 Jeon Yeongjae</p>
                 </footer>
@@ -64,7 +73,7 @@ export default function Home() {
     );
 }
 
-export async function getStaticProps({ locale }: { locale: string }) {
+export async function getStaticProps({locale}: { locale: string }) {
     return {
         props: {
             ...(await serverSideTranslations(locale, ['common'])),
