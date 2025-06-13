@@ -26,8 +26,8 @@ export default function Home() {
             descriptionKey: 'projectWave',
             links: [
                 { label: 'GitHub', url: 'https://github.com/LunaStev/Wave' },
-                { label: '사이트', url: 'https://wave-lang.dev' },
-                { label: '문서', url: 'https://docs.wave-lang.dev' }
+                { label: 'Site', url: 'https://wave-lang.dev' },
+                { label: 'Docs', url: 'https://docs.wave-lang.dev' }
             ]
         },
         {
@@ -48,7 +48,7 @@ export default function Home() {
             name: 'WSON',
             descriptionKey: 'projectWSON',
             links: [
-                { label: '문서', url: 'https://wave-lang.dev/docs/wson' }
+                { label: 'Docs', url: 'https://wave-lang.dev/docs/wson' }
             ]
         },
         {
@@ -58,6 +58,24 @@ export default function Home() {
                 { label: 'GitHub', url: 'https://github.com/LunaStev/OpenAI-C' }
             ]
         }
+    ];
+
+    const awesome = [
+        {
+            name: 'Awesome Wave',
+            descriptionKey: 'awesomeWave',
+            links: [
+                { label: 'GitHub', url: 'https://github.com/LunaStev/awesome-wave' },
+            ]
+        },
+        {
+            name: 'Awesome OpenAI',
+            descriptionKey: 'awesomeOpenAI',
+            links: [
+                { label: 'GitHub', url: 'https://github.com/LunaStev/awesome-openai' }
+            ]
+        },
+
     ];
 
     return (
@@ -95,8 +113,14 @@ export default function Home() {
                 <section className="section">
                     <h2 className="section-title">{t('awesomeTitle')}</h2>
                     <div className="card-grid">
-                        <div className="card"><h3>Awesome Wave</h3><p>{t('awesomeWave')}</p></div>
-                        <div className="card"><h3>Awesome OpenAI</h3><p>{t('awesomeOpenAI')}</p></div>
+                        {awesome.map((project, idx) => (
+                            <ProjectCard
+                                key={idx}
+                                name={project.name}
+                                description={t(project.descriptionKey)}
+                                links={project.links}
+                            />
+                        ))}
                     </div>
                 </section>
 

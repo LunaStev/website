@@ -17,7 +17,7 @@ export function ProjectCard({ name, description, links }: {
 
             <Modal show={show} onHide={() => setShow(false)} centered>
                 <Modal.Header closeButton>
-                    <Modal.Title>{name} 링크</Modal.Title>
+                    <Modal.Title>{name}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     {links.map((link, idx) => (
