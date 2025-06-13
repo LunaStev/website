@@ -22,13 +22,13 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
     const dropdownRef = useRef<HTMLDivElement | null>(null);
 
     const current = locale || 'en';
-    const languages = ['en', 'ko', 'es', 'zh_CH', 'de', 'fr', 'tr', 'pt', 'ja', 'ms', 'pl', 'ru', 'hi', 'uk'];
+    const languages = ['en', 'ko', 'es', 'zh_CH', 'de', 'fr', 'tr', 'pt', 'ja', 'ms', 'pl', 'ru', 'hi', 'uk', 'sv', 'cs', 'fi'];
     const languageLabels: Record<string, string> = {
         en: 'English',
         ko: '한국어',
         es: 'Español',
         de: 'Deutsch',
-        zh_CH: '中语',
+        zh_CH: '中文',
         fr: 'Français',
         tr: 'Türkçe',
         pt: 'Português',
@@ -38,6 +38,9 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
         ru: 'Русский',
         hi: 'हिन्दी',
         uk: 'Українська',
+        sv: 'Svenska',
+        cs: 'Čeština',
+        fi: 'Suomi',
     };
 
     useEffect(() => {
