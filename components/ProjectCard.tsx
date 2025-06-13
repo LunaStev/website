@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import {useTranslation} from "next-i18next";
-import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 export function ProjectCard({ name, description, links }: {
     name: string,
@@ -42,12 +41,4 @@ export function ProjectCard({ name, description, links }: {
         </>
     );
 }
-export async function getStaticProps({locale}: { locale: string }) {
-    return {
-        props: {
-            ...(await serverSideTranslations(locale, ['common'])),
-        },
-    };
-}
-
 
