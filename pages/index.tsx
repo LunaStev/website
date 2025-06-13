@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import Layout from '../components/Layout';
+import { ProjectCard } from '../components/ProjectCard';
 
 export default function Home() {
     const { t } = useTranslation('common');
@@ -18,6 +19,46 @@ export default function Home() {
         document.body.className = '';
         document.body.classList.add(themeClass);
     }, [themeClass]);
+
+    const projects = [
+        {
+            name: 'Wave',
+            descriptionKey: 'projectWave',
+            links: [
+                { label: 'GitHub', url: 'https://github.com/LunaStev/Wave' },
+                { label: '사이트', url: 'https://wave-lang.dev' },
+                { label: '문서', url: 'https://docs.wave-lang.dev' }
+            ]
+        },
+        {
+            name: 'Whale',
+            descriptionKey: 'projectWhale',
+            links: [
+                { label: 'GitHub', url: 'https://github.com/LunaStev/Whale' }
+            ]
+        },
+        {
+            name: 'Vex',
+            descriptionKey: 'projectVex',
+            links: [
+                { label: 'GitHub', url: 'https://github.com/LunaStev/Vex' }
+            ]
+        },
+        {
+            name: 'WSON',
+            descriptionKey: 'projectWSON',
+            links: [
+                { label: '문서', url: 'https://wave-lang.dev/docs/wson' }
+            ]
+        },
+        {
+            name: 'OpenAI C',
+            descriptionKey: 'projectOpenAIC',
+            links: [
+                { label: 'GitHub', url: 'https://github.com/LunaStev/OpenAI-C' }
+            ]
+        }
+    ];
 
     return (
         <div className={themeClass}>
@@ -40,11 +81,14 @@ export default function Home() {
                 <section className="section">
                     <h2 className="section-title">{t('projectsTitle')}</h2>
                     <div className="card-grid">
-                        <div className="card"><h3>Wave</h3><p>{t('projectWave')}</p></div>
-                        <div className="card"><h3>Whale</h3><p>{t('projectWhale')}</p></div>
-                        <div className="card"><h3>Vex</h3><p>{t('projectVex')}</p></div>
-                        <div className="card"><h3>WSON</h3><p>{t('projectWSON')}</p></div>
-                        <div className="card"><h3>OpenAI C</h3><p>{t('projectOpenAIC')}</p></div>
+                        {projects.map((project, idx) => (
+                            <ProjectCard
+                                key={idx}
+                                name={project.name}
+                                description={t(project.descriptionKey)}
+                                links={project.links}
+                            />
+                        ))}
                     </div>
                 </section>
 
