@@ -283,7 +283,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.lang-menu {
+.lang-menu .language-label {
   position: absolute;
   top: 110%;
   right: 0;
@@ -294,9 +294,6 @@ body {
   min-width: 160px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   z-index: 1000;
-}
-
-.lang-menu .language-label {
   color: white !important;
 }
 
