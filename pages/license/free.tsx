@@ -2,7 +2,7 @@
 // Licensed under the LunaStev License 2.0
 
 import Head from 'next/head';
-import Navbar from '../../components/Navbar';
+import Layout from '../../components/Layout';
 import { useState, useEffect } from 'react';
 
 export default function LicenseFreePage() {
@@ -21,7 +21,7 @@ export default function LicenseFreePage() {
                 <meta name="description" content="LunaStev License Free – Limited Use License for Public Components" />
             </Head>
 
-            <Navbar currentTheme={theme} onThemeChange={setTheme} />
+            <Layout currentTheme={theme} onThemeChange={setTheme} />
 
             <main className="license-main">
                 <div className="license-wrapper">

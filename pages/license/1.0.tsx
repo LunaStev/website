@@ -5,6 +5,10 @@ import Head from 'next/head';
 import Navbar from '../../components/Navbar';
 import { useState, useEffect } from 'react';
 
+import Head from 'next/head';
+import Layout from '../../components/Layout';
+import { useState, useEffect } from 'react';
+
 export default function LicenseV1Page() {
     const [theme, setTheme] = useState<'light' | 'dark' | 'purple'>('light');
     const themeClass = `theme-${theme}`;
@@ -21,7 +25,7 @@ export default function LicenseV1Page() {
                 <meta name="description" content="LunaStev License 1.0 – Portfolio Source Code View Only License" />
             </Head>
 
-            <Navbar currentTheme={theme} onThemeChange={setTheme} />
+            <Layout currentTheme={theme} onThemeChange={setTheme} />
 
             <main className="license-main">
                 <div className="license-wrapper">

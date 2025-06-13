@@ -8,6 +8,13 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+import Head from 'next/head';
+import Layout from '../components/Layout';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+
 export default function LicensePage() {
     const { t } = useTranslation('common');
     const [theme, setTheme] = useState<'light' | 'dark' | 'purple'>('light');
@@ -25,7 +32,7 @@ export default function LicensePage() {
                 <meta name="description" content="The official license for LunaStev's personal portfolio code." />
             </Head>
 
-            <Navbar currentTheme={theme} onThemeChange={setTheme} />
+            <Layout currentTheme={theme} onThemeChange={setTheme} />
 
             <main className="license-main">
                 <div className="license-wrapper">

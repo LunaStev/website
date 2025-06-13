@@ -5,6 +5,10 @@ import Head from 'next/head';
 import Navbar from '../../components/Navbar';
 import { useState, useEffect } from 'react';
 
+import Head from 'next/head';
+import Layout from '../../components/Layout';
+import { useState, useEffect } from 'react';
+
 export default function LicenseV2Page() {
     const [theme, setTheme] = useState<'light' | 'dark' | 'purple'>('light');
     const themeClass = `theme-${theme}`;
@@ -21,7 +25,7 @@ export default function LicenseV2Page() {
                 <meta name="description" content="LunaStev License 2.0 – General Reference License for Demos and Docs" />
             </Head>
 
-            <Navbar currentTheme={theme} onThemeChange={setTheme} />
+            <Layout currentTheme={theme} onThemeChange={setTheme} />
 
             <main className="license-main">
                 <div className="license-wrapper">
@@ -39,8 +43,7 @@ export default function LicenseV2Page() {
 
                         <p>
                             You are permitted to view and study the code.
-                            However, redistribution, commercial use, or creation of derivative works—
-                            in whole or in part—is strictly prohibited without explicit prior written consent.
+                            However, redistribution, commercial use, or creation of derivative works— in whole or in part—is strictly prohibited without explicit prior written consent.
                         </p>
 
                         <p>

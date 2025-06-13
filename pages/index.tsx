@@ -7,7 +7,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
-import Navbar from '../components/Navbar';
+import Layout from '../components/Layout';
 
 export default function Home() {
     const { t } = useTranslation('common');
@@ -26,10 +26,9 @@ export default function Home() {
                 <meta name="description" content={t('metaDescription')} />
             </Head>
 
-            <Navbar currentTheme={theme} onThemeChange={setTheme} />
+            <Layout currentTheme={theme} onThemeChange={setTheme} />
 
             <main className="main-content">
-                {/* Hero Section */}
                 <section className="hero">
                     <h1>{t('greeting')}</h1>
                     <p>{t('intro')}</p>
@@ -38,7 +37,6 @@ export default function Home() {
                     </Link>
                 </section>
 
-                {/* Projects Section */}
                 <section className="section">
                     <h2 className="section-title">{t('projectsTitle')}</h2>
                     <div className="card-grid">
@@ -50,7 +48,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Awesome Section */}
                 <section className="section">
                     <h2 className="section-title">{t('awesomeTitle')}</h2>
                     <div className="card-grid">
@@ -59,7 +56,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Footer */}
                 <footer className="footer">
                     <p>© 2025 Jeon Yeongjae</p>
                 </footer>
