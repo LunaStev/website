@@ -19,5 +19,7 @@
   "license-2.0-description": "General-purpose reference license. Applies to demos, docs, and example code by LunaStev.",
   "license-free-description": "Limited-use license for selected public components. Allows personal and commercial use with attribution.",
   "papersTitle": "Papers",
-  "papersPending": "Papers are currently in preparation."
+  "papersPending": "Papers are currently in preparation.",
+  "close": "Close",
+  "more": "More"
 }

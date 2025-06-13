@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import {useTranslation} from "next-i18next";
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
 
 export function ProjectCard({ name, description, links }: {
     name: string,
@@ -7,12 +9,13 @@ export function ProjectCard({ name, description, links }: {
     links: { label: string, url: string }[]
 }) {
     const [show, setShow] = useState(false);
+    const { t } = useTranslation('common');
     return (
         <>
             <div className="card">
                 <h3>{name}</h3>
                 <p>{description}</p>
-                <Button size="sm" variant="outline-secondary" onClick={() => setShow(true)}>더보기</Button>
+                <Button size="sm" variant="outline-secondary" onClick={() => setShow(true)}>{t('more')}</Button>
             </div>
 
             <Modal show={show} onHide={() => setShow(false)} centered>
@@ -33,9 +36,18 @@ export function ProjectCard({ name, description, links }: {
                     ))}
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => setShow(false)}>닫기</Button>
+                    <Button variant="secondary" onClick={() => setShow(false)}>{t('close')}</Button>
                 </Modal.Footer>
             </Modal>
         </>
     );
 }
+export async function getStaticProps({locale}: { locale: string }) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common'])),
+        },
+    };
+}
+
+

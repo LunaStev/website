@@ -19,5 +19,7 @@
   "license-2.0-description": "범용 참고용 라이선스. LunaStev가 제공하는 데모, 문서, 예제 코드에 적용됩니다.",
   "license-free-description": "일부 공개 컴포넌트에 대한 제한적 사용 라이선스. 출처 표시 시 개인 및 상업적 사용이 허용됩니다.",
   "papersTitle": "논문",
-  "papersPending": "논문 준비 중입니다."
+  "papersPending": "논문 준비 중입니다.",
+  "close": "닫기",
+  "more": "더보기"
 }
