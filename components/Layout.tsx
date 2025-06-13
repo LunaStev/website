@@ -51,16 +51,13 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
                     {/* Theme Toggle */}
                     <div className="theme-toggle d-flex gap-2">
                         {[
-                            { theme: 'light', icon: '🌞', title: 'Light Theme' },
-                            { theme: 'dark', icon: '🌙', title: 'Dark Theme' },
-                            { theme: 'purple', icon: '🟣', title: 'Purple Theme' },
+                            { theme: 'light' as const, icon: '🌞', title: 'Light Theme' },
+                            { theme: 'dark' as const, icon: '🌙', title: 'Dark Theme' },
+                            { theme: 'purple' as const, icon: '🟣', title: 'Purple Theme' },
                         ].map(({ theme, icon, title }) => (
-                            <OverlayTrigger key={theme}
-                                            placement="bottom"
-                                            overlay={<Tooltip>{title}</Tooltip>}
-                            >
+                            <OverlayTrigger key={theme} placement="bottom" overlay={<Tooltip>{title}</Tooltip>}>
                                 <button
-                                    onClick={() => onThemeChange(theme as any)}
+                                    onClick={() => onThemeChange(theme)}
                                     className={`btn btn-sm ${currentTheme === theme ? `btn-${theme === 'purple' ? 'primary' : theme}` : `btn-outline-${theme === 'purple' ? 'primary' : theme}`}`}
                                 >
                                     {icon}
