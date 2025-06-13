@@ -395,3 +395,16 @@ body {
   color: inherit;
   border-bottom: 1px solid currentColor;
 }
+
+/* 언어 스위치용 텍스트 컬러 (테마별) */
+.text-light {
+  color: #111;
+}
+
+.text-dark {
+  color: #f1f1f1;
+}
+
+.text-purple {
+  color: #f0eaff;
+}

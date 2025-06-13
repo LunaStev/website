@@ -22,11 +22,18 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
     const dropdownRef = useRef<HTMLDivElement | null>(null);
 
     const current = locale || 'en';
-    const languages = ['en', 'ko', 'es'];
+    const languages = ['en', 'ko', 'es', 'zh_CH', 'de', 'fr', 'tr', 'pt', 'ja', 'ms'];
     const languageLabels: Record<string, string> = {
         en: 'English',
         ko: '한국어',
         es: 'Español',
+        de: 'Deutsch',
+        zh_CH: '中语',
+        fr: 'Français',
+        tr: 'Türkçe',
+        pt: 'Português',
+        ja: '日本語',
+        ms: 'Bahasa Melayu'
     };
 
     useEffect(() => {
@@ -70,7 +77,7 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
                     <div className="lang-dropdown position-relative" ref={dropdownRef}>
                         <div className="lang-selected d-flex align-items-center gap-1" onClick={() => setOpen(!open)} style={{ cursor: 'pointer' }}>
                             <Image src={`/flags/${current}.png`} alt={current} width={20} height={14} />
-                            <span>{languageLabels[current]}</span>
+                            <span className={`language-label text-${currentTheme}`}>{languageLabels[current]}</span>
                             <span className="dropdown-icon">▾</span>
                         </div>
                         {open && (
@@ -88,7 +95,7 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
                                             onClick={() => setOpen(false)}
                                         >
                                             <Image src={`/flags/${lng}.png`} alt={lng} width={20} height={14} />
-                                            <span>{languageLabels[lng]}</span>
+                                            <span className={`language-label text-${currentTheme}`}>{languageLabels[lng]}</span>
                                         </a>
                                     </Link>
                                 ))}
