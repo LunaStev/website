@@ -75,9 +75,10 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
 
                     {/* Language Switcher */}
                     <div className="lang-dropdown position-relative" ref={dropdownRef}>
-                        <div className="lang-selected d-flex align-items-center gap-1" onClick={() => setOpen(!open)} style={{ cursor: 'pointer' }}>
-                            <Image src={`/flags/${current}.png`} alt={current} width={20} height={14} />
-                            <span className={`language-label text-${currentTheme}`}>{languageLabels[current]}</span>
+                        <div className="lang-selected d-flex align-items-center gap-1" onClick={() => setOpen(!open)}
+                             style={{cursor: 'pointer'}}>
+                            <Image src={`/flags/${current}.png`} alt={current} width={20} height={14}/>
+                            <span className="language-label text-black">{languageLabels[current]}</span>
                             <span className="dropdown-icon">▾</span>
                         </div>
                         {open && (
@@ -94,8 +95,8 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
                                             className={`lang-item d-flex align-items-center gap-2 px-2 py-1 ${current === lng ? 'bg-light fw-bold' : ''}`}
                                             onClick={() => setOpen(false)}
                                         >
-                                            <Image src={`/flags/${lng}.png`} alt={lng} width={20} height={14} />
-                                            <span className={`language-label text-${currentTheme}`}>{languageLabels[lng]}</span>
+                                            <Image src={`/flags/${lng}.png`} alt={lng} width={20} height={14}/>
+                                            <span className="language-label text-black">{languageLabels[lng]}</span>
                                         </a>
                                     </Link>
                                 ))}
