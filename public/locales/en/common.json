@@ -21,5 +21,6 @@
   "papersTitle": "Papers",
   "papersPending": "Papers are currently in preparation.",
   "close": "Close",
-  "more": "More"
+  "more": "More",
+  "paperPythagoreanDesc": "An informal paper analyzing the ontological essence of the Pythagorean theorem through linear algebra, complex numbers, and a parallel universe thought experiment."
 }

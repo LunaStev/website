@@ -125,13 +125,11 @@ export default function Home() {
 
                 <section className="section">
                     <h2 className="section-title">📄 {t('papersTitle')}</h2>
-                    <div className="card-grid">
-                        <div className="card">
-                            <h3>직각의 존재론</h3>
-                            <p>{t('paperPythagoreanDesc')}</p>
-                            <a href="/files/pythagoras.pdf" target="_blank" rel="noopener noreferrer">
-                                {t('downloadPDF')}
-                            </a>
+                    <div className="card">
+                        <h3>직각의 존재론</h3>
+                        <p>{t('paperPythagoreanDesc')}</p>
+                        <div style={{border: '1px solid #ccc', padding: '1rem', overflow: 'auto'}}>
+                            <PDFViewer fileUrl="/files/pythagoras.pdf"/>
                         </div>
                     </div>
                 </section>

@@ -21,5 +21,6 @@
   "papersTitle": "論文",
   "papersPending": "論文を準備中です。",
   "close": "閉じる",
-  "more": "もっと見る"
+  "more": "もっと見る",
+  "paperPythagoreanDesc": "ピタゴラスの定理の存在論的本質を、線形代数、複素数、そして並行宇宙の思考実験を通して分析した非公式な論文です。"
 }

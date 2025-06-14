@@ -21,5 +21,6 @@
   "papersTitle": "论文",
   "papersPending": "论文准备中。",
   "close": "关闭",
-  "more": "查看更多"
+  "more": "查看更多",
+  "paperPythagoreanDesc": "这是一篇非正式论文，通过线性代数、复数以及平行宇宙的思想实验分析了毕达哥拉斯定理的本体论本质。"
 }
