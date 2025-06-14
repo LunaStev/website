@@ -137,7 +137,7 @@ export default function Home() {
                     <h2 className="section-title">📄 {t('papersTitle')}</h2>
                     <div className="card-grid">
                         <div className="card">
-                            {awesome.map((project, idx) => (
+                            {papers.map((project, idx) => (
                                 <ProjectCard
                                     key={idx}
                                     name={project.name}
