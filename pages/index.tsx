@@ -77,6 +77,16 @@ export default function Home() {
 
     ];
 
+    const papers = [
+        {
+            name: '직각의 존재론',
+            descriptionKey: 'paperPythagoreanDesc',
+            links: [
+                { label: 'PDF', url: '/files/pythagoras.pdf' },
+            ]
+        }
+    ];
+
     return (
         <div className={themeClass}>
             <Head>
@@ -127,11 +137,14 @@ export default function Home() {
                     <h2 className="section-title">📄 {t('papersTitle')}</h2>
                     <div className="card-grid">
                         <div className="card">
-                            <h3>직각의 존재론</h3>
-                            <p>{t('paperPythagoreanDesc')}</p>
-                            <Link href="/papers/pythagorean">
-                                <a>Read</a>
-                            </Link>
+                            {awesome.map((project, idx) => (
+                                <ProjectCard
+                                    key={idx}
+                                    name={project.name}
+                                    description={t(project.descriptionKey)}
+                                    links={project.links}
+                                />
+                            ))}
                         </div>
                     </div>
                 </section>
