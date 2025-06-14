@@ -8,10 +8,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import Layout from '../components/Layout';
-import dynamic from 'next/dynamic';
 import { ProjectCard } from '../components/ProjectCard';
-
-const PDFViewer = dynamic(() => import('../components/PDFViewer'), { ssr: false });
 
 export default function Home() {
     const { t } = useTranslation('common');
