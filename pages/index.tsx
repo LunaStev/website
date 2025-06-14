@@ -127,7 +127,11 @@ export default function Home() {
                     <h2 className="section-title">📄 {t('papersTitle')}</h2>
                     <div className="card-grid">
                         <div className="card">
-                            <p>{t('papersPending')}</p>
+                            <h3>직각의 존재론</h3>
+                            <p>{t('paperPythagoreanDesc')}</p>
+                            <a href="/files/pythagoras.pdf" target="_blank" rel="noopener noreferrer">
+                                {t('downloadPDF')}
+                            </a>
                         </div>
                     </div>
                 </section>
