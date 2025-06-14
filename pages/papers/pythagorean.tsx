@@ -11,12 +11,11 @@ export default function PythagoreanPaper() {
     const { t } = useTranslation('common');
 
     return (
-        <div className="paper-page">
+        <div>
             <Head>
-                <title>{t('pythagoreanPaperTitle')} – LunaStev</title>
+                <title>{t('pythagoreanPaperTitle')}</title>
             </Head>
-
-            <main className="main-content">
+            <main>
                 <h1>{t('pythagoreanPaperTitle')}</h1>
                 <p>{t('paperPythagoreanDesc')}</p>
                 <PDFViewer fileUrl="/files/pythagoras.pdf" />
