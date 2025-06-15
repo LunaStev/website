@@ -8,6 +8,8 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Container, Navbar as BsNavbar, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 interface Props {
     currentTheme: 'light' | 'dark' | 'purple';
@@ -79,6 +81,9 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
                             </OverlayTrigger>
                         ))}
                     </div>
+
+                    <SpeedInsights />
+                    <Analytics />
 
                     {/* Language Switcher */}
                     <div className="lang-dropdown position-relative" ref={dropdownRef}>
