@@ -56,6 +56,13 @@ export default function Home() {
             links: [
                 { label: 'GitHub', url: 'https://github.com/LunaStev/OpenAI-C' }
             ]
+        },
+        {
+            name: 'PulseGPU',
+            descriptionKey: '',
+            links: [
+                { label: 'GitHub', url: 'https://github.com/LunaStev/pulsegpu' }
+            ]
         }
     ];
 
