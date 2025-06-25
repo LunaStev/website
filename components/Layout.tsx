@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Container, Navbar, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Container, Navbar, Nav } from 'react-bootstrap';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
