@@ -1,13 +1,11 @@
-// Layout.tsx
 // Copyright (c) 2025 Jeon Yeongjae
 // Licensed under the LunaStev License 2.0
 
-// components/Layout.tsx
 import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Container, Navbar as BsNavbar, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
+import { Container, Navbar, Nav, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -56,59 +54,47 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
     }, []);
 
     return (
-        <BsNavbar expand="lg" className="custom-navbar px-3 py-2 shadow-sm bg-light">
+        <Navbar expand="lg" className="custom-navbar">
             <Container className="d-flex justify-content-between align-items-center">
-                <BsNavbar.Brand href="/" className="navbar-brand-text fw-bold">
-                    <span className="text-theme">LunaStev</span>
-                </BsNavbar.Brand>
+                <Link href="/" className="navbar-brand-text">LunaStev</Link>
 
                 <Nav className="d-flex align-items-center gap-3">
 
                     {/* Theme Toggle */}
-                    <div className="theme-toggle d-flex gap-2">
+                    <div className="theme-toggle d-flex gap-1">
                         {[
-                            { theme: 'light' as const, icon: '🌞', title: 'Light Theme' },
-                            { theme: 'dark' as const, icon: '🌙', title: 'Dark Theme' },
-                            { theme: 'purple' as const, icon: '🟣', title: 'Purple Theme' },
+                            { theme: 'light' as const, icon: '🌞', title: 'Light' },
+                            { theme: 'dark' as const, icon: '🌙', title: 'Dark' },
+                            { theme: 'purple' as const, icon: '🟣', title: 'Purple' },
                         ].map(({ theme, icon, title }) => (
-                            <OverlayTrigger key={theme} placement="bottom" overlay={<Tooltip>{title}</Tooltip>}>
-                                <button
-                                    onClick={() => onThemeChange(theme)}
-                                    className={`btn btn-sm ${currentTheme === theme ? `btn-${theme === 'purple' ? 'primary' : theme}` : `btn-outline-${theme === 'purple' ? 'primary' : theme}`}`}
-                                >
-                                    {icon}
-                                </button>
-                            </OverlayTrigger>
+                            <button
+                                key={theme}
+                                onClick={() => onThemeChange(theme)}
+                                className={currentTheme === theme ? 'btn btn-sm btn-primary' : 'btn btn-sm btn-outline-secondary'}
+                                title={title}
+                            >
+                                {icon}
+                            </button>
                         ))}
                     </div>
 
-                    <SpeedInsights />
-                    <Analytics />
-
                     {/* Language Switcher */}
-                    <div className="lang-dropdown position-relative" ref={dropdownRef}>
-                        <div className="lang-selected d-flex align-items-center gap-1" onClick={() => setOpen(!open)}
-                             style={{cursor: 'pointer'}}>
-                            <Image src={`/flags/${current}.png`} alt={current} width={20} height={14}/>
-                            <span className="language-label text-black">{languageLabels[current]}</span>
-                            <span className="dropdown-icon">▾</span>
+                    <div className="lang-dropdown" ref={dropdownRef}>
+                        <div className="lang-selected" onClick={() => setOpen(!open)}>
+                            <Image src={`/flags/${current}.png`} alt={current} width={20} height={14} />
+                            <span>{languageLabels[current]}</span>
+                            <span style={{ fontSize: '0.8rem' }}>▾</span>
                         </div>
                         {open && (
-                            <div className="lang-menu position-absolute mt-2 bg-white border rounded shadow-sm p-2" style={{ zIndex: 1000 }}>
+                            <div className="lang-menu">
                                 {languages.map((lng) => (
-                                    <Link
-                                        key={lng}
-                                        href={{ pathname, query }}
-                                        as={asPath}
-                                        locale={lng}
-                                        legacyBehavior
-                                    >
+                                    <Link key={lng} href={{ pathname, query }} as={asPath} locale={lng} legacyBehavior>
                                         <a
-                                            className={`lang-item d-flex align-items-center gap-2 px-2 py-1 ${current === lng ? 'bg-light fw-bold' : ''}`}
+                                            className={`lang-item ${current === lng ? 'active' : ''}`}
                                             onClick={() => setOpen(false)}
                                         >
-                                            <Image src={`/flags/${lng}.png`} alt={lng} width={20} height={14}/>
-                                            <span className="language-label text-black">{languageLabels[lng]}</span>
+                                            <Image src={`/flags/${lng}.png`} alt={lng} width={20} height={14} />
+                                            {languageLabels[lng]}
                                         </a>
                                     </Link>
                                 ))}
@@ -116,22 +102,23 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
                         )}
                     </div>
 
-                    {/* 기타 요소 */}
-                    <Nav.Link href="/license" className="d-none d-md-block">
-                        License
-                    </Nav.Link>
-                    <div className="d-none d-md-block">
-                        <iframe
-                            src="https://github.com/sponsors/LunaStev/button"
-                            title="Sponsor LunaStev"
-                            height="32"
-                            width="114"
-                            style={{ border: 0, borderRadius: '6px' }}
-                        ></iframe>
+                    {/* GitHub Sponsor Button */}
+                    <div className="d-none d-md-block d-flex align-items-center gap-2">
+                        <Link href="/sponsor" legacyBehavior>
+                            <a className="btn btn-sm btn-outline-primary" style={{ borderRadius: '8px' }}>
+                                Sponsor
+                            </a>
+                        </Link>
                     </div>
 
+
+                    {/* License Page */}
+                    <Nav.Link href="/license" className="d-none d-md-block">License</Nav.Link>
+
+                    <SpeedInsights />
+                    <Analytics />
                 </Nav>
             </Container>
-        </BsNavbar>
+        </Navbar>
     );
 }
