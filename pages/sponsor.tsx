@@ -23,11 +23,131 @@ const SponsorPage: React.FC = () => {
                     ></iframe>
 
                     <h2>Bitcoin</h2>
-                    <p>
-            <span style={{fontFamily: "'Courier New', monospace", fontSize: '1.1rem'}}>
-              1GTWVr48mzBGADqY6f2QFdSbaTKLp5booH
-            </span>
-                    </p>
+                    <div style={{
+                        background: 'rgba(255,255,255,0.03)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        padding: '1rem',
+                        borderRadius: '12px',
+                        marginBottom: '2rem'
+                    }}>
+                        {[
+                            {network: 'Bitcoin Mainnet', address: '1GTWVr48mzBGADqY6f2QFdSbaTKLp5booH'}
+                        ].map((entry, i) => (
+                            <div key={i} style={{marginBottom: '1.2rem'}}>
+                                <p style={{marginBottom: '0.3rem', fontWeight: 600}}>Network: {entry.network}</p>
+                                <p style={{
+                                    fontFamily: "'Courier New', monospace",
+                                    fontSize: '1.1rem',
+                                    wordBreak: 'break-all',
+                                    margin: 0
+                                }}>
+                                    {entry.address}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <h2>Ethereum</h2>
+                    <div style={{
+                        background: 'rgba(255,255,255,0.03)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        padding: '1rem',
+                        borderRadius: '12px',
+                        marginBottom: '2rem'
+                    }}>
+                        {[
+                            {network: 'Ethereum', address: '0xfb567459e79192376221d12420311c7fc27b3f3b'},
+                            {network: 'Arbitrum One', address: '0xfb567459e79192376221d12420311c7fc27b3f3b'},
+                            {network: 'Optimism', address: '0xfb567459e79192376221d12420311c7fc27b3f3b'},
+                        ].map((entry, i) => (
+                            <div key={i} style={{marginBottom: '1.2rem'}}>
+                                <p style={{marginBottom: '0.3rem', fontWeight: 600}}>Network: {entry.network}</p>
+                                <p style={{
+                                    fontFamily: "'Courier New', monospace",
+                                    fontSize: '1.1rem',
+                                    wordBreak: 'break-all',
+                                    margin: 0
+                                }}>
+                                    {entry.address}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <h2>Solana</h2>
+                    <div style={{
+                        background: 'rgba(255,255,255,0.03)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        padding: '1rem',
+                        borderRadius: '12px',
+                        marginBottom: '2rem'
+                    }}>
+                        {[
+                            {network: 'Solana', address: 'HX4eJR5p2dbLMGPnWc1dQRCQpr3WYbWhthrWMXnp1rTC'},
+                        ].map((entry, i) => (
+                            <div key={i} style={{marginBottom: '1.2rem'}}>
+                                <p style={{marginBottom: '0.3rem', fontWeight: 600}}>Network: {entry.network}</p>
+                                <p style={{
+                                    fontFamily: "'Courier New', monospace",
+                                    fontSize: '1.1rem',
+                                    wordBreak: 'break-all',
+                                    margin: 0
+                                }}>
+                                    {entry.address}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <h2>BNB</h2>
+                    <div style={{
+                        background: 'rgba(255,255,255,0.03)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        padding: '1rem',
+                        borderRadius: '12px',
+                        marginBottom: '2rem'
+                    }}>
+                        {[
+                            {network: 'BNB Smart Chain', address: '0xf7d5597140a4669d1cb29b9feb8bd53a20986eeb'},
+                        ].map((entry, i) => (
+                            <div key={i} style={{marginBottom: '1.2rem'}}>
+                                <p style={{marginBottom: '0.3rem', fontWeight: 600}}>Network: {entry.network}</p>
+                                <p style={{
+                                    fontFamily: "'Courier New', monospace",
+                                    fontSize: '1.1rem',
+                                    wordBreak: 'break-all',
+                                    margin: 0
+                                }}>
+                                    {entry.address}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <h2>USDT</h2>
+                    <div style={{
+                        background: 'rgba(255,255,255,0.03)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                        padding: '1rem',
+                        borderRadius: '12px',
+                        marginBottom: '2rem'
+                    }}>
+                        {[
+                            {network: 'Tron', address: 'TTNuzu7cZvYweJXWShECWAEF4swHiZFsuw'},
+                        ].map((entry, i) => (
+                            <div key={i} style={{marginBottom: '1.2rem'}}>
+                                <p style={{marginBottom: '0.3rem', fontWeight: 600}}>Network: {entry.network}</p>
+                                <p style={{
+                                    fontFamily: "'Courier New', monospace",
+                                    fontSize: '1.1rem',
+                                    wordBreak: 'break-all',
+                                    margin: 0
+                                }}>
+                                    {entry.address}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
 
                     <h2>Ko-fi</h2>
                     <p>
