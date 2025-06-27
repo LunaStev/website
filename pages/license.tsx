@@ -58,6 +58,14 @@ export default function LicensePage() {
                             </p>
                             <Link href="/license/free" className="license-link">{t('license-link')}</Link>
                         </div>
+
+                        <div className="license-version-card">
+                            <h2>LunaStev License All rights reserved</h2>
+                            <p className="license-version-description">
+                                All rights reserved.
+                            </p>
+                            <Link href="/license/all-rights-reserved" className="license-link">{t('license-link')}</Link>
+                        </div>
                     </section>
                 </div>
             </main>
@@ -65,7 +73,7 @@ export default function LicensePage() {
     );
 }
 
-export async function getStaticProps({ locale }: { locale: string }) {
+export async function getStaticProps({locale}: { locale: string }) {
     return {
         props: {
             ...(await serverSideTranslations(locale, ['common'])),
