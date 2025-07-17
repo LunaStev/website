@@ -99,21 +99,21 @@ export default function GraphPage() {
                 .attr("r", 10)
                 .attr("fill", (d) => colorMap[d.family] || "lightgray")
                 .call(
-                    d3.drag<any, Node>()
-                        .on("start", (event, d) => {
+                    d3.drag<SVGCircleElement, Node>()
+                        .on("start", (event: d3.D3DragEvent<SVGCircleElement, Node, Node>, d: Node) => {
                             if (!event.active) simulation.alphaTarget(0.3).restart();
                             d.fx = d.x;
                             d.fy = d.y;
                         })
-                        .on("drag", (event, d) => {
+                        .on("drag", (event: d3.D3DragEvent<SVGCircleElement, Node, Node>, d: Node) => {
                             d.fx = event.x;
                             d.fy = event.y;
                         })
-                        .on("end", (event, d) => {
+                        .on("end", (event: d3.D3DragEvent<SVGCircleElement, Node, Node>, d: Node) => {
                             if (!event.active) simulation.alphaTarget(0);
                             d.fx = null;
                             d.fy = null;
-                        }) as any
+                        })
                 );
 
             // Draw labels
@@ -143,10 +143,9 @@ export default function GraphPage() {
 
             // Zoom 기능
             svg.call(
-                d3
-                    .zoom<SVGSVGElement, unknown>()
+                d3.zoom<SVGSVGElement, unknown>()
                     .scaleExtent([0.2, 4])
-                    .on("zoom", (event) => {
+                    .on("zoom", (event: d3.D3ZoomEvent<SVGSVGElement, unknown>) => {
                         svg.selectAll("g").attr("transform", event.transform);
                     })
             );
