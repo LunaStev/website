@@ -99,11 +99,7 @@ export default function GraphPage() {
                 .attr("r", 10)
                 .attr("fill", (d) => colorMap[d.family] || "lightgray");
 
-            const dragBehavior: d3.DragBehavior<
-                SVGCircleElement,
-                Node,
-                Node | d3.SubjectPosition
-            > = d3
+            const dragBehavior = d3
                 .drag<SVGCircleElement, Node, Node | d3.SubjectPosition>()
                 .on("start", (event: d3.D3DragEvent<SVGCircleElement, Node, Node | d3.SubjectPosition>, d: Node) => {
                     if (!event.active) simulation.alphaTarget(0.3).restart();
@@ -120,8 +116,11 @@ export default function GraphPage() {
                     d.fy = null;
                 });
 
-            (node as unknown as d3.Selection<SVGCircleElement | d3.BaseType, Node, SVGGElement, unknown>)
-                .call(dragBehavior);
+            const applyDrag = (selection: d3.Selection<SVGCircleElement, Node, SVGGElement, unknown>) => {
+                dragBehavior(selection);
+            };
+
+            node.call(applyDrag);
 
             // Draw labels
             const label = svg
