@@ -1,0 +1,106 @@
+{
+  "nodes": [
+    { "name": "Fortran", "family": "Legacy" },
+    { "name": "ALGOL", "family": "Legacy" },
+    { "name": "COBOL", "family": "Legacy" },
+    { "name": "Smalltalk", "family": "Legacy" },
+    { "name": "Simula", "family": "Legacy" },
+    { "name": "BASIC", "family": "Legacy" },
+    { "name": "Visual Basic", "family": "Legacy" },
+
+    { "name": "Pascal", "family": "Pascal" },
+    { "name": "Modula-2", "family": "Pascal" },
+    { "name": "Ada", "family": "Pascal" },
+    { "name": "Delphi", "family": "Pascal" },
+
+    { "name": "C", "family": "C" },
+    { "name": "C++", "family": "C" },
+    { "name": "Objective-C", "family": "C" },
+    { "name": "Go", "family": "C" },
+    { "name": "Rust", "family": "C" },
+    { "name": "Swift", "family": "C" },
+    { "name": "D", "family": "C" },
+
+    { "name": "Java", "family": "Java" },
+    { "name": "Scala", "family": "Java" },
+    { "name": "Kotlin", "family": "Java" },
+    { "name": "Groovy", "family": "Java" },
+    { "name": "C#", "family": "Java" },
+
+    { "name": "Perl", "family": "Script" },
+    { "name": "Python", "family": "Script" },
+    { "name": "Ruby", "family": "Script" },
+    { "name": "Julia", "family": "Script" },
+    { "name": "Lua", "family": "Script" },
+    { "name": "PHP", "family": "Script" },
+    { "name": "JavaScript", "family": "Script" },
+    { "name": "TypeScript", "family": "Script" },
+
+    { "name": "Lisp", "family": "Functional" },
+    { "name": "Scheme", "family": "Functional" },
+    { "name": "Clojure", "family": "Functional" },
+    { "name": "ML", "family": "Functional" },
+    { "name": "OCaml", "family": "Functional" },
+    { "name": "ReasonML", "family": "Functional" },
+    { "name": "Haskell", "family": "Functional" },
+    { "name": "F#", "family": "Functional" },
+    { "name": "Erlang", "family": "Functional" },
+    { "name": "Elixir", "family": "Functional" },
+
+    { "name": "Wave", "family": "Wave" },
+    { "name": "Loa", "family": "Wave" }
+  ],
+  "edges": [
+    ["Fortran", "ALGOL"],
+    ["Fortran", "COBOL"],
+    ["Fortran", "Pascal"],
+    ["BASIC", "Visual Basic"],
+    ["Smalltalk", "Objective-C"],
+    ["Simula", "Smalltalk"],
+    ["Simula", "C++"],
+
+    ["ALGOL", "C"],
+    ["ALGOL", "Pascal"],
+    ["ALGOL", "Ada"],
+
+    ["Pascal", "Modula-2"],
+    ["Modula-2", "Ada"],
+    ["Pascal", "Delphi"],
+
+    ["C", "C++"],
+    ["C", "Objective-C"],
+    ["C", "Go"],
+    ["C", "Rust"],
+    ["C", "Swift"],
+    ["C", "Java"],
+
+    ["C++", "Java"],
+    ["C++", "C#"],
+    ["C++", "D"],
+    ["C++", "Rust"],
+
+    ["Java", "Scala"],
+    ["Java", "Kotlin"],
+    ["Java", "Groovy"],
+
+    ["Perl", "Python"],
+    ["Perl", "Ruby"],
+    ["Python", "Julia"],
+    ["Python", "PHP"],
+    ["Python", "Lua"],
+    ["JavaScript", "TypeScript"],
+
+    ["Lisp", "Scheme"],
+    ["Scheme", "Clojure"],
+    ["ML", "OCaml"],
+    ["OCaml", "ReasonML"],
+    ["ML", "Haskell"],
+    ["Haskell", "F#"],
+    ["Erlang", "Elixir"],
+
+    ["C", "Wave"],
+    ["Rust", "Wave"],
+    ["Python", "Loa"],
+    ["Wave", "Loa"]
+  ]
+}

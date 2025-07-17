@@ -22,7 +22,9 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
     const dropdownRef = useRef<HTMLDivElement | null>(null);
 
     const current = locale || 'en';
-    const languages = ['en', 'ko', 'es', 'zh_CH', 'de', 'fr', 'tr', 'pt', 'ja', 'ms', 'pl', 'ru', 'hi', 'uk', 'sv', 'cs', 'fi'];
+    const languages = [
+        'en', 'ko', 'es', 'zh_CH', 'de', 'fr', 'tr', 'pt', 'ja', 'ms', 'pl', 'ru', 'hi', 'uk', 'sv', 'cs', 'fi'
+    ];
     const languageLabels: Record<string, string> = {
         en: 'English',
         ko: '한국어',
@@ -59,6 +61,10 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
                 <Link href="/" className="navbar-brand-text">LunaStev</Link>
 
                 <Nav className="d-flex align-items-center gap-3">
+
+                    <Link href="/graph" legacyBehavior>
+                        <a className="nav-link">Graph</a>
+                    </Link>
 
                     {/* Theme Toggle */}
                     <div className="theme-toggle d-flex gap-1">
@@ -110,7 +116,6 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
                             </a>
                         </Link>
                     </div>
-
 
                     {/* License Page */}
                     <Nav.Link href="/license" className="d-none d-md-block">License</Nav.Link>
