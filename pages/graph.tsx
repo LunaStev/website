@@ -18,18 +18,27 @@ interface Link {
 export default function GraphPage() {
     const ref = useRef<SVGSVGElement | null>(null);
 
+    interface RawNode {
+        name: string;
+        family: string;
+    }
+
+    interface RawEdge extends Array<string> {
+        0: string;
+        1: string;
+    }
+
     useEffect(() => {
         async function drawGraph() {
-            // JSON 데이터 로드
             const res = await fetch("/graph/languages.json");
-            const data = await res.json();
+            const data: { nodes: RawNode[]; edges: RawEdge[] } = await res.json();
 
-            const nodes: Node[] = data.nodes.map((n: any) => ({
+            const nodes: Node[] = data.nodes.map((n) => ({
                 id: n.name,
                 family: n.family,
             }));
 
-            const links: Link[] = data.edges.map((e: any) => ({
+            const links: Link[] = data.edges.map((e) => ({
                 source: e[0],
                 target: e[1],
             }));
