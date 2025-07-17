@@ -90,27 +90,26 @@ export default function GraphPage() {
                 .join("line")
                 .attr("stroke-width", 1.5);
 
-            // Draw nodes
             const node = svg
                 .append("g")
-                .selectAll("circle")
+                .selectAll<SVGCircleElement, Node>("circle")
                 .data(nodes)
                 .join("circle")
                 .attr("r", 10)
                 .attr("fill", (d) => colorMap[d.family] || "lightgray");
 
             const dragBehavior = d3
-                .drag<SVGCircleElement, Node, Node | d3.SubjectPosition>()
-                .on("start", (event: d3.D3DragEvent<SVGCircleElement, Node, Node | d3.SubjectPosition>, d: Node) => {
+                .drag<SVGCircleElement, Node>()
+                .on("start", (event, d) => {
                     if (!event.active) simulation.alphaTarget(0.3).restart();
                     d.fx = d.x;
                     d.fy = d.y;
                 })
-                .on("drag", (event: d3.D3DragEvent<SVGCircleElement, Node, Node | d3.SubjectPosition>, d: Node) => {
+                .on("drag", (event, d) => {
                     d.fx = event.x;
                     d.fy = event.y;
                 })
-                .on("end", (event: d3.D3DragEvent<SVGCircleElement, Node, Node | d3.SubjectPosition>, d: Node) => {
+                .on("end", (event, d) => {
                     if (!event.active) simulation.alphaTarget(0);
                     d.fx = null;
                     d.fy = null;
