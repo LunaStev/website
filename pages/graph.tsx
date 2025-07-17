@@ -5,14 +5,14 @@ import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import Layout from "../components/Layout";
 
-interface Node {
+interface Node extends d3.SimulationNodeDatum {
     id: string;
     family: string;
 }
 
-interface Link {
-    source: string;
-    target: string;
+interface Link extends d3.SimulationLinkDatum<Node> {
+    source: string | Node;
+    target: string | Node;
 }
 
 export default function GraphPage() {
