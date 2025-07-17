@@ -116,11 +116,7 @@ export default function GraphPage() {
                     d.fy = null;
                 });
 
-            const applyDrag = (selection: d3.Selection<SVGCircleElement, Node, SVGGElement, unknown>) => {
-                dragBehavior(selection);
-            };
-
-            node.call(applyDrag);
+            node.call(dragBehavior);
 
             // Draw labels
             const label = svg
