@@ -147,7 +147,7 @@ export default function GraphPage() {
                 d3.zoom<SVGSVGElement, unknown>()
                     .scaleExtent([0.2, 4])
                     .on("zoom", (event: d3.D3ZoomEvent<SVGSVGElement, unknown>) => {
-                        svg.selectAll("g").attr("transform", event.transform);
+                        svg.selectAll("g").attr("transform", event.transform.toString());
                     })
             );
         }
