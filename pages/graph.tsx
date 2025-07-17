@@ -99,7 +99,7 @@ export default function GraphPage() {
                 .attr("r", 10)
                 .attr("fill", (d) => colorMap[d.family] || "lightgray")
                 .call(
-                    d3.drag<SVGCircleElement, Node>()
+                    (d3.drag<SVGCircleElement, Node>()
                         .on("start", (event: d3.D3DragEvent<SVGCircleElement, Node, Node>, d: Node) => {
                             if (!event.active) simulation.alphaTarget(0.3).restart();
                             d.fx = d.x;
@@ -113,7 +113,9 @@ export default function GraphPage() {
                             if (!event.active) simulation.alphaTarget(0);
                             d.fx = null;
                             d.fy = null;
-                        })
+                        }) as unknown) as (
+                        selection: d3.Selection<SVGCircleElement, Node, SVGGElement, unknown>
+                    ) => void
                 );
 
             // Draw labels
