@@ -50,7 +50,7 @@ export default function GraphPage() {
             const height = window.innerHeight - 100;
 
             const svg = d3
-                .select(ref.current)
+                .select<SVGSVGElement, unknown>(ref.current!)
                 .attr("width", width)
                 .attr("height", height)
                 .style("background", "#111")
