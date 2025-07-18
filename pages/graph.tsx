@@ -1,7 +1,7 @@
 // Copyright (c) 2025 Jeon Yeongjae
 // Licensed under the LunaStev License 2.0
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import Layout from "../components/Layout";
 
