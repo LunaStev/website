@@ -1,7 +1,7 @@
 // Copyright (c) 2025 Jeon Yeongjae
 // Licensed under the LunaStev License 2.0
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import Layout from "../components/Layout";
 
@@ -43,7 +43,6 @@ export default function GraphPage() {
                 target: e[1],
             }));
 
-            // 기존 SVG 초기화
             d3.select(ref.current).selectAll("*").remove();
 
             const width = window.innerWidth;
@@ -56,7 +55,6 @@ export default function GraphPage() {
                 .style("background", "#111")
                 .style("cursor", "grab");
 
-            // 패밀리별 색상
             const colorMap: Record<string, string> = {
                 C: "skyblue",
                 Java: "orange",
@@ -64,10 +62,9 @@ export default function GraphPage() {
                 Functional: "green",
                 Pascal: "pink",
                 Legacy: "gray",
-                Wave: "#5865F2", // ✅ Wave 대표색
+                Wave: "#5865F2",
             };
 
-            // Force simulation
             const simulation = d3
                 .forceSimulation<Node>(nodes)
                 .force(
@@ -80,9 +77,14 @@ export default function GraphPage() {
                 .force("charge", d3.forceManyBody().strength(-300))
                 .force("center", d3.forceCenter(width / 2, height / 2));
 
-            // Draw links
-            const link = svg
-                .append("g")
+            // --- 추가/수정된 부분 시작 ---
+
+            // 링크 컨테이너를 먼저 추가하여 노드 아래에 렌더링되도록 함
+            const linkGroup = svg.append("g");
+            const nodeGroup = svg.append("g");
+            const labelGroup = svg.append("g");
+
+            const link = linkGroup
                 .attr("stroke", "#aaa")
                 .attr("stroke-opacity", 0.6)
                 .selectAll("line")
@@ -90,13 +92,17 @@ export default function GraphPage() {
                 .join("line")
                 .attr("stroke-width", 1.5);
 
-            const node = svg
-                .append("g")
+            const node = nodeGroup
                 .selectAll<SVGCircleElement, Node>("circle")
                 .data(nodes)
                 .join("circle")
                 .attr("r", 10)
-                .attr("fill", (d) => colorMap[d.family] || "lightgray");
+                .attr("fill", (d) => colorMap[d.family] || "lightgray")
+                .style("cursor", "pointer") // 클릭 가능하도록 커서 변경
+                .attr("stroke", "#fff") // 선택 시 테두리 효과를 위해 기본 테두리 추가
+                .attr("stroke-width", 0); // 처음엔 테두리 안보이게
+
+            // --- 추가/수정된 부분 끝 ---
 
             const dragBehavior = d3
                 .drag<SVGCircleElement, Node>()
@@ -104,6 +110,7 @@ export default function GraphPage() {
                     if (!event.active) simulation.alphaTarget(0.3).restart();
                     d.fx = d.x;
                     d.fy = d.y;
+                    svg.style("cursor", "grabbing");
                 })
                 .on("drag", (event, d) => {
                     d.fx = event.x;
@@ -111,15 +118,17 @@ export default function GraphPage() {
                 })
                 .on("end", (event, d) => {
                     if (!event.active) simulation.alphaTarget(0);
+                    if (!event.subject.dragged) { // --- 추가/수정된 부분: 드래그가 아닌 클릭을 구분
+                        nodeClick(event, d);
+                    }
                     d.fx = null;
                     d.fy = null;
+                    svg.style("cursor", "grab");
                 });
 
             node.call(dragBehavior);
 
-            // Draw labels
-            const label = svg
-                .append("g")
+            const label = labelGroup
                 .selectAll("text")
                 .data(nodes)
                 .join("text")
@@ -127,9 +136,9 @@ export default function GraphPage() {
                 .attr("fill", "#fff")
                 .attr("font-size", "12px")
                 .attr("text-anchor", "middle")
-                .attr("dy", "-1.2em");
+                .attr("dy", "-1.2em")
+                .style("pointer-events", "none"); // 레이블이 클릭 이벤트를 가로채지 않도록 설정
 
-            // Tick update
             simulation.on("tick", () => {
                 link
                     .attr("x1", (d) => (d.source as Node).x!)
@@ -142,17 +151,98 @@ export default function GraphPage() {
                 label.attr("x", (d) => d.x!).attr("y", (d) => d.y!);
             });
 
-            // Zoom 기능
+            const zoomGroup = svg.append("g").attr("class", "zoom-container");
+            zoomGroup.append(() => linkGroup.node());
+            zoomGroup.append(() => nodeGroup.node());
+            zoomGroup.append(() => labelGroup.node());
+
             svg.call(
                 d3.zoom<SVGSVGElement, unknown>()
                     .scaleExtent([0.2, 4])
                     .on("zoom", (event: d3.D3ZoomEvent<SVGSVGElement, unknown>) => {
-                        svg.selectAll("g").attr("transform", event.transform.toString());
+                        zoomGroup.attr("transform", event.transform.toString());
                     })
             );
+
+            // --- 추가/수정된 부분 시작 ---
+
+            let selectedNode: Node | null = null;
+
+            function nodeClick(_event: any, d: Node) {
+                // 이미 선택된 노드를 다시 클릭하면 하이라이트 해제
+                if (selectedNode && selectedNode.id === d.id) {
+                    resetHighlight();
+                    return;
+                }
+
+                selectedNode = d;
+
+                const connectedNodes = new Set<string>();
+                connectedNodes.add(d.id);
+
+                // 직계 부모/자식 찾기
+                links.forEach(l => {
+                    const sourceId = (l.source as Node).id;
+                    const targetId = (l.target as Node).id;
+
+                    if (sourceId === d.id) {
+                        connectedNodes.add(targetId);
+                    }
+                    if (targetId === d.id) {
+                        connectedNodes.add(sourceId);
+                    }
+                });
+
+                // 선택된 노드와 직계 노드만 하이라이트
+                node
+                    .attr("stroke-width", (n) => (n.id === d.id ? 2 : 0)) // 선택된 노드에만 테두리
+                    .transition().duration(300)
+                    .style("opacity", (n) => (connectedNodes.has(n.id) ? 1 : 0.1));
+
+                label
+                    .transition().duration(300)
+                    .style("opacity", (l) => (connectedNodes.has(l.id) ? 1 : 0.1));
+
+                link
+                    .transition().duration(300)
+                    .style("opacity", (l) => {
+                        const sourceId = (l.source as Node).id;
+                        const targetId = (l.target as Node).id;
+                        return (sourceId === d.id || targetId === d.id) ? 1 : 0.1;
+                    });
+            }
+
+            // 하이라이트 리셋 함수
+            function resetHighlight() {
+                selectedNode = null;
+                node
+                    .attr("stroke-width", 0)
+                    .transition().duration(300)
+                    .style("opacity", 1);
+                label
+                    .transition().duration(300)
+                    .style("opacity", 1);
+                link
+                    .transition().duration(300)
+                    .style("opacity", 0.6); // 원래 투명도로 복귀
+            }
+
+            // 배경 클릭 시 하이라이트 해제
+            svg.on("click", (event) => {
+                if (event.target === svg.node()) { // svg 배경을 직접 클릭했을 때만
+                    resetHighlight();
+                }
+            });
+            // --- 추가/수정된 부분 끝 ---
         }
 
         drawGraph();
+
+        // 창 크기 변경 시 다시 그리기 (옵션)
+        const handleResize = () => drawGraph();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+
     }, []);
 
     return (
