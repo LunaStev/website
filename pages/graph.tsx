@@ -56,6 +56,9 @@ export default function GraphPage() {
                 .style("cursor", "grab");
 
             const colorMap: Record<string, string> = {
+                Ancestor: "#D2B48C",
+                Logic: "#FFD700",
+                Database: "#8A2BE2",
                 C: "skyblue",
                 Java: "orange",
                 Script: "purple",
