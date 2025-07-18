@@ -168,7 +168,10 @@ export default function GraphPage() {
 
             let selectedNode: Node | null = null;
 
-            function nodeClick(_event: any, d: Node) {
+            function nodeClick(
+                _event: d3.D3DragEvent<SVGCircleElement, Node, Node>,
+                d: Node
+            ) {
                 // 이미 선택된 노드를 다시 클릭하면 하이라이트 해제
                 if (selectedNode && selectedNode.id === d.id) {
                     resetHighlight();
