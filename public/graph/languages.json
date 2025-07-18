@@ -26,9 +26,11 @@
     { "name": "Objective-C", "family": "C" },
     { "name": "Ada", "family": "Pascal" },
     { "name": "Modula-2", "family": "Pascal" },
+    { "name": "Oberon", "family": "Pascal" },
     { "name": "SQL", "family": "Database" },
 
     { "name": "Scheme", "family": "Functional" },
+    { "name": "Common Lisp", "family": "Functional" },
     { "name": "Miranda", "family": "Functional" },
     { "name": "Erlang", "family": "Functional" },
     { "name": "Haskell", "family": "Functional" },
