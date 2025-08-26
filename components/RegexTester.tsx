@@ -230,7 +230,7 @@ export function RegexTester() {
                             <li><code>\s</code> - Whitespace</li>
                             <li><code>[abc]</code> - Character set</li>
                             <li><code>(abc)</code> - Capturing group</li>
-                            <li><code>a{2,4}</code> - Quantifier (2-4 times)</li>
+                            <li><code>a{'{'}2,4{'}'}</code> - Quantifier (2-4 times)</li>
                         </ul>
                     </div>
                 </div>
