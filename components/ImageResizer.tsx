@@ -4,7 +4,7 @@
 import { useState, useRef } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
-import Image from 'next/image';
+import NextImage from 'next/image';
 
 export function ImageResizer() {
     const { t } = useTranslation('common');
@@ -29,7 +29,7 @@ export function ImageResizer() {
         setSelectedFile(file);
         const reader = new FileReader();
         reader.onload = (e) => {
-            const img = new Image();
+            const img = new window.Image();
             img.onload = () => {
                 setOriginalDimensions({ width: img.width, height: img.height });
                 setWidth(img.width);
@@ -98,7 +98,7 @@ export function ImageResizer() {
 
             {preview && (
                 <div className="mb-3">
-                    <Image 
+                    <NextImage 
                         src={preview} 
                         alt="Preview" 
                         style={{ maxWidth: '200px', maxHeight: '200px', objectFit: 'contain' }}
