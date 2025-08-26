@@ -2,7 +2,7 @@
 // Licensed under the LunaStev License 2.0
 
 import { useState } from 'react';
-import { Form, Button, InputGroup } from 'react-bootstrap';
+import { Button, InputGroup } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 
 export function ColorConverter() {

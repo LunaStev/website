@@ -156,7 +156,7 @@ export function JWTDecoder() {
                                 readOnly
                                 style={{ backgroundColor: 'var(--bg-tertiary)', fontSize: '12px' }}
                             />
-                            {decoded.header.alg && (
+                            {decoded.header.alg && typeof decoded.header.alg === 'string' && (
                                 <small className="text-muted mt-1 d-block">
                                     Algorithm: {getAlgorithmInfo(decoded.header.alg)}
                                 </small>
@@ -223,12 +223,12 @@ export function JWTDecoder() {
                                             <strong>Not Before:</strong> {decoded.notBefore}
                                         </div>
                                     )}
-                                    {decoded.payload.iss && (
+                                    {decoded.payload.iss && typeof decoded.payload.iss === 'string' && (
                                         <div className="mb-2">
                                             <strong>Issuer:</strong> {decoded.payload.iss}
                                         </div>
                                     )}
-                                    {decoded.payload.aud && (
+                                    {decoded.payload.aud && typeof decoded.payload.aud === 'string' && (
                                         <div className="mb-2">
                                             <strong>Audience:</strong> {decoded.payload.aud}
                                         </div>

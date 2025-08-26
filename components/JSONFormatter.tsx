@@ -2,7 +2,7 @@
 // Licensed under the LunaStev License 2.0
 
 import { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Button, Alert } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 
 export function JSONFormatter() {
