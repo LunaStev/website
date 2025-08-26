@@ -2,7 +2,7 @@
 // Licensed under the LunaStev License 2.0
 
 import { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 
 interface GeneratedUUID {
@@ -154,7 +154,7 @@ export function UUIDGenerator() {
                         <select
                             className="form-select"
                             value={format}
-                            onChange={(e) => setFormat(e.target.value as any)}
+                            onChange={(e) => setFormat(e.target.value as 'standard' | 'uppercase' | 'no-hyphens' | 'braces')}
                         >
                             <option value="standard">Standard (with hyphens)</option>
                             <option value="uppercase">Uppercase</option>

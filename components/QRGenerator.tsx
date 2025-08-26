@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
+import Image from 'next/image';
 
 export function QRGenerator() {
     const { t } = useTranslation('common');
@@ -65,7 +66,7 @@ export function QRGenerator() {
 
             {qrUrl && (
                 <div className="text-center">
-                    <img src={qrUrl} alt="Generated QR Code" className="img-fluid" style={{ maxWidth: '100%', height: 'auto' }} />
+                    <Image src={qrUrl} alt="Generated QR Code" className="img-fluid" style={{ maxWidth: '100%', height: 'auto' }} width={400} height={400} />
                 </div>
             )}
         </div>

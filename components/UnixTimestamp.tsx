@@ -2,7 +2,7 @@
 // Licensed under the LunaStev License 2.0
 
 import { useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 
 export function UnixTimestamp() {

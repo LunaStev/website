@@ -316,7 +316,7 @@ export function LoremIpsumGenerator() {
                     </div>
                 </div>
                 <div className="mt-3">
-                    <strong>💡 Tip:</strong> Lorem ipsum is preferred over "Here is some content" because it doesn't distract from the visual elements of a design layout.
+                    <strong>💡 Tip:</strong> Lorem ipsum is preferred over &quot;Here is some content&quot; because it doesn&apos;t distract from the visual elements of a design layout.
                 </div>
             </div>
         </div>

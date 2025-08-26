@@ -2,7 +2,7 @@
 // Licensed under the LunaStev License 2.0
 
 import { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Button, Alert } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 
 interface Match {
@@ -199,7 +199,7 @@ export function RegexTester() {
                     <div className="border rounded p-3">
                         {matches.map((match, index) => (
                             <div key={index} className="mb-3 p-3 bg-light rounded">
-                                <div><strong>Match {index + 1}:</strong> "{match.match}"</div>
+                                <div><strong>Match {index + 1}:</strong> &quot;{match.match}&quot;</div>
                                 <div><small className="text-muted">Position: {match.index}-{match.index + match.match.length}</small></div>
                                 {match.groups.length > 0 && (
                                     <div><small className="text-muted">Groups: [{match.groups.join(', ')}]</small></div>

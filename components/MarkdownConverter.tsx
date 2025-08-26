@@ -195,7 +195,7 @@ That's it! Try editing the markdown on the left.`;
                         <ul className="list-unstyled small">
                             <li><code>[link](url)</code></li>
                             <li><code>- list item</code></li>
-                            <li><code>> blockquote</code></li>
+                            <li><code>{'>'}blockquote</code></li>
                             <li><code>```code block```</code></li>
                             <li><code>---</code> (horizontal rule)</li>
                         </ul>
