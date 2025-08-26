@@ -35,7 +35,7 @@ export function MarkdownConverter() {
             
             // Lists
             .replace(/^\- (.*$)/gim, '<li>$1</li>')
-            .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
+            .replace(/(<li>[\s\S]*<\/li>)/, '<ul>$1</ul>')
             
             // Blockquotes
             .replace(/^> (.*$)/gim, '<blockquote>$1</blockquote>')

@@ -5,9 +5,24 @@ import { useState } from 'react';
 import { Button, Alert } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 
+interface JWTHeader {
+    alg?: string;
+    typ?: string;
+    [key: string]: unknown;
+}
+
+interface JWTPayloadData {
+    iss?: string; // issuer
+    aud?: string; // audience
+    exp?: number;
+    iat?: number;
+    nbf?: number;
+    [key: string]: unknown;
+}
+
 interface JWTPayload {
-    header: Record<string, unknown>;
-    payload: Record<string, unknown>;
+    header: JWTHeader;
+    payload: JWTPayloadData;
     signature: string;
     isExpired: boolean;
     expiresAt?: string;
