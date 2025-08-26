@@ -13,7 +13,7 @@ export function MarkdownConverter() {
 
     const convertMarkdown = () => {
         // Simple markdown to HTML converter
-        let result = markdown
+        const result = markdown
             // Headers
             .replace(/^### (.*$)/gim, '<h3>$1</h3>')
             .replace(/^## (.*$)/gim, '<h2>$1</h2>')
