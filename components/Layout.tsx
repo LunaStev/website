@@ -5,9 +5,10 @@ import { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { useTranslation } from 'next-i18next';
 
 interface Props {
     currentTheme: 'light' | 'dark' | 'purple';
@@ -15,6 +16,7 @@ interface Props {
 }
 
 export default function Layout({ currentTheme, onThemeChange }: Props) {
+    const { t } = useTranslation('common');
     const router = useRouter();
     const { locale, pathname, asPath, query } = router;
 
@@ -22,27 +24,13 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
     const dropdownRef = useRef<HTMLDivElement | null>(null);
 
     const current = locale || 'en';
-    const languages = [
-        'en', 'ko', 'es', 'zh_CH', 'de', 'fr', 'tr', 'pt', 'ja', 'ms', 'pl', 'ru', 'hi', 'uk', 'sv', 'cs', 'fi'
-    ];
+    const languages = ['en', 'ko', 'es', 'zh_CH', 'ja'];
     const languageLabels: Record<string, string> = {
         en: 'English',
         ko: '한국어',
         es: 'Español',
-        de: 'Deutsch',
         zh_CH: '中文',
-        fr: 'Français',
-        tr: 'Türkçe',
-        pt: 'Português',
         ja: '日本語',
-        ms: 'Bahasa Melayu',
-        pl: 'Polski',
-        ru: 'Русский',
-        hi: 'हिन्दी',
-        uk: 'Українська',
-        sv: 'Svenska',
-        cs: 'Čeština',
-        fi: 'Suomi',
     };
 
     useEffect(() => {
@@ -61,6 +49,28 @@ export default function Layout({ currentTheme, onThemeChange }: Props) {
                 <Link href="/" className="navbar-brand-text">LunaStev</Link>
 
                 <Nav className="d-flex align-items-center gap-3">
+
+                    <NavDropdown title={t('toolsTitle')} id="tools-dropdown">
+                        <NavDropdown.Item href="/tools/base64">
+                            🔄 {t('base64Title')}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="/tools/color">
+                            🎨 {t('colorTitle')}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="/tools/qr">
+                            📱 {t('qrTitle')}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="/tools/image">
+                            📷 {t('imageTitle')}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="/tools/json">
+                            📄 {t('jsonTitle')}
+                        </NavDropdown.Item>
+                    </NavDropdown>
+
+                    <Link href="/portfolio" legacyBehavior>
+                        <a className="nav-link">{t('portfolioTitle')}</a>
+                    </Link>
 
                     <Link href="/graph" legacyBehavior>
                         <a className="nav-link">Graph</a>
