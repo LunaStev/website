@@ -2,7 +2,7 @@
 // Licensed under the LunaStev License 2.0
 
 import { useState } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 
