@@ -28,6 +28,7 @@ export default function ColorPage() {
                 <meta property="og:title" content={`${t('colorTitle')} - ${t('metaTitle')}`} />
                 <meta property="og:description" content={t('colorDescription')} />
                 <link rel="canonical" href="https://lunastev.org/tools/color" />
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4304352889546147" crossOrigin="anonymous"></script>
             </Head>
 
             <Layout currentTheme={theme} onThemeChange={setTheme} />

@@ -28,6 +28,7 @@ export default function QRPage() {
                 <meta property="og:title" content={`${t('qrTitle')} - ${t('metaTitle')}`} />
                 <meta property="og:description" content={t('qrDescription')} />
                 <link rel="canonical" href="https://lunastev.org/tools/qr" />
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4304352889546147" crossOrigin="anonymous"></script>
             </Head>
 
             <Layout currentTheme={theme} onThemeChange={setTheme} />

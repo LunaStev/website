@@ -22,7 +22,7 @@ export function Base64Tool() {
                 const decoded = decodeURIComponent(escape(atob(input)));
                 setOutput(decoded);
             }
-        } catch (err) {
+        } catch {
             setError('Invalid input for Base64 ' + mode);
             setOutput('');
         }

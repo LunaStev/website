@@ -28,6 +28,7 @@ export default function JSONPage() {
                 <meta property="og:title" content={`${t('jsonTitle')} - ${t('metaTitle')}`} />
                 <meta property="og:description" content={t('jsonDescription')} />
                 <link rel="canonical" href="https://lunastev.org/tools/json" />
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4304352889546147" crossOrigin="anonymous"></script>
             </Head>
 
             <Layout currentTheme={theme} onThemeChange={setTheme} />

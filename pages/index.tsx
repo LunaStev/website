@@ -9,11 +9,6 @@ import Link from 'next/link';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Layout from '../components/Layout';
 import { UtilityCard } from '../components/UtilityCard';
-import { Base64Tool } from '../components/Base64Tool';
-import { ColorConverter } from '../components/ColorConverter';
-import { QRGenerator } from '../components/QRGenerator';
-import { ImageResizer } from '../components/ImageResizer';
-import { JSONFormatter } from '../components/JSONFormatter';
 
 export default function Home() {
     const { t } = useTranslation('common');
@@ -39,7 +34,9 @@ export default function Home() {
                 <meta name="twitter:title" content={t('metaTitle')} />
                 <meta name="twitter:description" content={t('metaDescription')} />
                 <link rel="canonical" href="https://lunastev.org" />
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4304352889546147" crossorigin="anonymous"></script>
+                
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4304352889546147" crossOrigin="anonymous"></script>
+                
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{

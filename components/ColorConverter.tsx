@@ -1,7 +1,7 @@
 // Copyright (c) 2025 Jeon Yeongjae
 // Licensed under the LunaStev License 2.0
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Form, Button, InputGroup } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 
@@ -29,7 +29,8 @@ export function ColorConverter() {
         g /= 255;
         b /= 255;
         const max = Math.max(r, g, b), min = Math.min(r, g, b);
-        let h = 0, s, l = (max + min) / 2;
+        let h = 0, s;
+        const l = (max + min) / 2;
 
         if (max === min) {
             h = s = 0;
