@@ -2,7 +2,7 @@
 // Licensed under the LunaStev License 2.0
 
 import { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 
 interface GeneratedContent {
@@ -231,7 +231,7 @@ export function LoremIpsumGenerator() {
                                 onChange={(e) => setStartWithLorem(e.target.checked)}
                             />
                             <label className="form-check-label" htmlFor="startWithLorem">
-                                Start with "Lorem ipsum"
+                                Start with &quot;Lorem ipsum&quot;
                             </label>
                         </div>
                         <div className="form-check form-check-inline">
@@ -297,7 +297,7 @@ export function LoremIpsumGenerator() {
                             <strong>What is Lorem Ipsum?</strong>
                             <ul className="list-unstyled small mt-1">
                                 <li>• Placeholder text used in printing and typesetting</li>
-                                <li>• Derived from "De finibus bonorum et malorum" by Cicero</li>
+                                <li>• Derived from &quot;De finibus bonorum et malorum&quot; by Cicero</li>
                                 <li>• Standard dummy text since the 1500s</li>
                                 <li>• Scrambled Latin that looks like readable English</li>
                             </ul>

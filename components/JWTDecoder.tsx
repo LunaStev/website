@@ -2,12 +2,12 @@
 // Licensed under the LunaStev License 2.0
 
 import { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Button, Alert } from 'react-bootstrap';
 import { useTranslation } from 'next-i18next';
 
 interface JWTPayload {
-    header: any;
-    payload: any;
+    header: Record<string, unknown>;
+    payload: Record<string, unknown>;
     signature: string;
     isExpired: boolean;
     expiresAt?: string;
@@ -77,7 +77,7 @@ export function JWTDecoder() {
         setJwt(sampleJWT);
     };
 
-    const formatJSON = (obj: any) => {
+    const formatJSON = (obj: Record<string, unknown>) => {
         return JSON.stringify(obj, null, 2);
     };
 
