@@ -123,10 +123,10 @@ export function CSSMinifier() {
             result = result.replace(/([^{}]+)\{([^{}]+)\}/g, (match, selector, properties) => {
                 const props = properties
                     .split(';')
-                    .filter(prop => prop.trim())
-                    .map(prop => prop.trim())
+                    .filter((prop: string) => prop.trim())
+                    .map((prop: string) => prop.trim())
                     .sort()
-                    .map(prop => `  ${prop};`)
+                    .map((prop: string) => `  ${prop};`)
                     .join('\n');
                 
                 return `${selector.trim()} {\n${props}\n}`;
