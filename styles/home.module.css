@@ -1,0 +1,271 @@
+/*
+ * Copyright (c) 2025 Jeon Yeongjae
+ * Licensed under the LunaStev License 2.0
+ * Modern Design System for LunaStev Tools
+ */
+
+/*
+ * Copyright...
+ * LunaStev Modern Portfolio UI v2
+ */
+
+.main {
+    background: linear-gradient(135deg, #0d0f23, #0a0c1b);
+    min-height: 100vh;
+    padding: 20px 60px;
+    color: white;
+    font-family: "Pretendard", system-ui, sans-serif;
+    animation: fadeIn 0.9s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.navLinks a {
+    margin-left: 25px;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.navLinks a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+/* HERO */
+.hero {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heroText {
+    max-width: 550px;
+}
+
+.title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.subtitle {
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+}
+
+.highlight {
+    color: #4b8bff;
+    font-weight: 900;
+}
+
+.description {
+    font-size: 1.1rem;
+    opacity: 0.88;
+    line-height: 1.75;
+    margin-bottom: 35px;
+}
+
+/* SOCIAL ICONS */
+.socials {
+    display: flex;
+    gap: 18px;
+}
+
+.socialIcon svg {
+    width: 34px;
+    height: 34px;
+    opacity: 0.8;
+    transition: 0.25s;
+}
+
+.socialIcon svg:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* PROFILE IMAGE */
+.heroImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    width: 260px;
+    height: 260px;
+    border-radius: 22px;
+    object-fit: cover;
+    box-shadow: 0 0 60px rgba(57, 120, 255, 0.4);
+    transition: 0.4s;
+}
+
+.profile:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 80px rgba(57, 120, 255, 0.5);
+}
+
+/* ---------------------- PROJECTS SECTION ---------------------- */
+
+.projects {
+    margin-top: 120px;
+}
+
+.sectionTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.projectGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.projectCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+    backdrop-filter: blur(8px);
+}
+
+.projectCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(0, 120, 255, 0.35);
+}
+
+.projectCard h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.projectCard p {
+    opacity: 0.85;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.projectButton {
+    color: #4b8bff;
+    font-weight: 700;
+    opacity: 0.85;
+    transition: 0.25s;
+}
+
+.projectButton:hover {
+    opacity: 1;
+    color: #74a3ff;
+}
+
+/* ---------------------- SKILLS SECTION ---------------------- */
+
+.skills {
+    margin-top: 120px;
+}
+
+.skillGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.skillCard {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(6px);
+    transition: 0.25s;
+}
+
+.skillCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(70, 120, 255, 0.25);
+}
+
+.skillCard h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.skillCard p {
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+/* ---------------------- CONTACT SECTION ---------------------- */
+
+.contact {
+    margin-top: 120px;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    gap: 20px;
+}
+
+.input, .textarea {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 18px;
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    backdrop-filter: blur(6px);
+    transition: 0.25s;
+}
+
+.input:focus, .textarea:focus {
+    border-color: #4b8bff;
+    box-shadow: 0 0 12px rgba(75, 139, 255, 0.4);
+}
+
+.textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.sendButton {
+    background: #4b8bff;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 10px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.sendButton:hover {
+    background: #6b9cff;
+    box-shadow: 0 0 16px rgba(75, 139, 255, 0.4);
+}
