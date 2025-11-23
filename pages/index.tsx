@@ -6,6 +6,14 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/home.module.css";
 
+type Project = {
+    id: string;
+    title: string;
+    longDesc: string;
+    tech: string[];
+    link: string;
+};
+
 export default function Home() {
 
     const [selectedProject, setSelectedProject] = useState<{
@@ -254,7 +262,15 @@ export default function Home() {
 
 /* ---------------------- SMALL COMPONENTS ---------------------- */
 
-function ProjectCard({ title, desc, onClick }) {
+function ProjectCard({
+    title,
+    desc,
+    onClick,
+}: {
+    title: string;
+    desc: string;
+    onClick: () => void;
+}) {
     return (
         <div className={styles.projectCard} onClick={onClick}>
             <h3>{title}</h3>
@@ -263,7 +279,14 @@ function ProjectCard({ title, desc, onClick }) {
     );
 }
 
-function SkillCard({ title, desc }) {
+
+function SkillCard({
+    title,
+    desc,
+}: {
+    title: string;
+    desc: string;
+}) {
     return (
         <div className={styles.skillCard}>
             <h3>{title}</h3>
@@ -272,16 +295,22 @@ function SkillCard({ title, desc }) {
     );
 }
 
+
 /* ---------------------- MODAL COMPONENT ---------------------- */
 
-function ProjectModal({ project, onClose }) {
+function ProjectModal({
+    project,
+    onClose,
+}: {
+    project: Project | null;
+    onClose: () => void;
+}) {
     const [slideIndex, setSlideIndex] = useState(0);
 
     if (!project) return null;
 
-    // 이미지 자동 스캔 (C 방식)
     const images = (() => {
-        const arr = [];
+        const arr: string[] = [];
         for (let i = 1; i <= 6; i++) {
             arr.push(`/project/${project.id}/${i}.png`);
         }
@@ -299,9 +328,12 @@ function ProjectModal({ project, onClose }) {
                     ✕
                 </button>
 
-                {/* SLIDER */}
                 <div className={styles.slider}>
-                    <img src={images[slideIndex]} className={styles.modalImage} />
+                    <img
+                        src={images[slideIndex]}
+                        className={styles.modalImage}
+                        alt=""
+                    />
 
                     <button className={styles.prevBtn} onClick={prevSlide}>
                         ‹
