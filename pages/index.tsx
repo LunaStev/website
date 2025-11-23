@@ -3,18 +3,25 @@
 
 import { useState, useEffect } from "react";
 import Head from "next/head";
+import Image from "next/image";
 import styles from "../styles/home.module.css";
 
 export default function Home() {
 
-    const [selectedProject, setSelectedProject] = useState(null);
+    const [selectedProject, setSelectedProject] = useState<{
+        id: string;
+        title: string;
+        longDesc: string;
+        tech: string[];
+        link: string;
+    } | null>(null);
 
     useEffect(() => {
         const revealElements = document.querySelectorAll(`.${styles.reveal}`);
-        
+
         const handleScroll = () => {
             const triggerHeight = window.innerHeight * 0.9;
-        
+
             revealElements.forEach((el) => {
                 const top = el.getBoundingClientRect().top;
                 if (top < triggerHeight) {
@@ -22,10 +29,10 @@ export default function Home() {
                 }
             });
         };
-    
+
         handleScroll();       // 첫 로드시 체크
         window.addEventListener("scroll", handleScroll);
-    
+
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -99,7 +106,13 @@ export default function Home() {
                     </div>
 
                     <div className={styles.heroImage}>
-                        <img src="/profile.png" alt="Profile" className={styles.profile} />
+                        <Image
+                            src="/profile.png"
+                            alt="Profile"
+                            width={260}
+                            height={260}
+                            className={styles.profile}
+                        />
                     </div>
                 </section>
 
