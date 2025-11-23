@@ -4,32 +4,23 @@
  * Modern Design System for LunaStev Tools
  */
 
-/*
- * Copyright...
- * LunaStev Modern Portfolio UI v2
- */
+/* ===========================================================
+   LunaStev Modern Portfolio Style (2025)
+   Blue Gradient + Dark UI
+   Author: LunaStev
+   =========================================================== */
 
 .main {
-    background: linear-gradient(135deg, #0d0f23, #0a0c1b);
+    background: linear-gradient(135deg, #0c1024, #0a0e1c 40%, #0f1835);
     min-height: 100vh;
     padding: 20px 60px;
     color: white;
     font-family: "Pretendard", system-ui, sans-serif;
-    animation: fadeIn 0.9s ease-out;
+    scroll-behavior: smooth;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* ---------------------- NAVBAR ---------------------- */
 
-/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -37,28 +28,37 @@
     padding: 15px 0;
 }
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
 .navLinks a {
     margin-left: 25px;
     cursor: pointer;
-    opacity: 0.8;
-    transition: 0.3s;
+    opacity: 0.85;
+    transition: 0.25s;
 }
 
 .navLinks a:hover {
     opacity: 1;
-    transform: translateY(-2px);
+    color: #4b8bff;
 }
 
-/* HERO */
+
+/* ---------------------- ABOUT SECTION ---------------------- */
+
 .hero {
     margin-top: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 50px;
 }
 
 .heroText {
-    max-width: 550px;
+    max-width: 600px;
 }
 
 .title {
@@ -66,7 +66,6 @@
     font-weight: 800;
     line-height: 1.25;
     margin-bottom: 20px;
-    animation: fadeIn 1s ease-out;
 }
 
 .subtitle {
@@ -80,8 +79,8 @@
 }
 
 .description {
-    font-size: 1.1rem;
-    opacity: 0.88;
+    font-size: 1.15rem;
+    opacity: 0.85;
     line-height: 1.75;
     margin-bottom: 35px;
 }
@@ -89,7 +88,7 @@
 /* SOCIAL ICONS */
 .socials {
     display: flex;
-    gap: 18px;
+    gap: 15px;
 }
 
 .socialIcon svg {
@@ -104,168 +103,361 @@
     transform: scale(1.1);
 }
 
-/* PROFILE IMAGE */
-.heroImage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* ---------------------- PROFILE ---------------------- */
 
-.profile {
+.heroImage img {
     width: 260px;
     height: 260px;
     border-radius: 22px;
     object-fit: cover;
-    box-shadow: 0 0 60px rgba(57, 120, 255, 0.4);
-    transition: 0.4s;
+    box-shadow: 0px 0px 40px rgba(65, 135, 255, 0.4);
 }
 
-.profile:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 80px rgba(57, 120, 255, 0.5);
-}
 
-/* ---------------------- PROJECTS SECTION ---------------------- */
+/* ===========================================================
+   PROJECTS SECTION
+   =========================================================== */
 
 .projects {
-    margin-top: 120px;
+    margin-top: 150px;
 }
 
 .sectionTitle {
-    font-size: 2rem;
+    font-size: 2.3rem;
     font-weight: 800;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .projectGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
 }
 
+/* Project Card */
 .projectCard {
-    background: rgba(255, 255, 255, 0.05);
+    background: #121628;
     padding: 25px;
     border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
-    transition: 0.3s;
-    backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: 0.25s;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .projectCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 35px rgba(0, 120, 255, 0.35);
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px rgba(56, 115, 255, 0.25);
 }
 
 .projectCard h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    font-size: 1.35rem;
 }
 
 .projectCard p {
-    opacity: 0.85;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    opacity: 0.8;
 }
 
-.projectButton {
-    color: #4b8bff;
-    font-weight: 700;
-    opacity: 0.85;
-    transition: 0.25s;
-}
 
-.projectButton:hover {
-    opacity: 1;
-    color: #74a3ff;
-}
-
-/* ---------------------- SKILLS SECTION ---------------------- */
+/* ===========================================================
+   SKILLS
+   =========================================================== */
 
 .skills {
-    margin-top: 120px;
+    margin-top: 150px;
 }
 
 .skillGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
 }
 
 .skillCard {
-    background: rgba(255, 255, 255, 0.05);
+    background: #121628;
     padding: 25px;
     border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(6px);
     transition: 0.25s;
 }
 
 .skillCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(70, 120, 255, 0.25);
+    transform: translateY(-6px);
+    box-shadow: 0 0 20px rgba(56, 115, 255, 0.3);
 }
 
 .skillCard h3 {
-    margin-bottom: 10px;
-    font-size: 1.3rem;
-    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 1.35rem;
 }
 
-.skillCard p {
-    opacity: 0.75;
-    line-height: 1.6;
-}
 
-/* ---------------------- CONTACT SECTION ---------------------- */
+/* ===========================================================
+   CONTACT FORM
+   =========================================================== */
 
 .contact {
-    margin-top: 120px;
+    margin-top: 150px;
+    padding-bottom: 120px;
 }
 
 .contactForm {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
     gap: 20px;
+    max-width: 450px;
 }
 
-.input, .textarea {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 14px 18px;
-    border-radius: 12px;
+.input,
+.textarea {
+    width: 100%;
+    padding: 15px;
+    background: #171b2e;
+    border: 1px solid rgba(255,255,255,0.05);
     color: white;
-    font-size: 1rem;
+    border-radius: 12px;
     outline: none;
-    backdrop-filter: blur(6px);
-    transition: 0.25s;
+    transition: 0.2s;
 }
 
-.input:focus, .textarea:focus {
+.input:focus,
+.textarea:focus {
     border-color: #4b8bff;
-    box-shadow: 0 0 12px rgba(75, 139, 255, 0.4);
 }
 
 .textarea {
-    min-height: 160px;
-    resize: vertical;
+    min-height: 120px;
+    resize: none;
 }
 
 .sendButton {
     background: #4b8bff;
-    border: none;
-    padding: 14px 18px;
+    padding: 14px;
     border-radius: 10px;
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
+    border: none;
     cursor: pointer;
     transition: 0.25s;
 }
 
 .sendButton:hover {
-    background: #6b9cff;
-    box-shadow: 0 0 16px rgba(75, 139, 255, 0.4);
+    background: #6a9cff;
+}
+
+
+/* ===========================================================
+   MODAL (PROJECT DETAIL)
+   =========================================================== */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.25s ease;
+}
+
+.modal {
+    background: #10121f;
+    padding: 30px;
+    border-radius: 20px;
+    width: 760px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    animation: popUp 0.25s ease;
+    box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+.closeButton {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 1.6rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.25s;
+}
+
+.closeButton:hover {
+    opacity: 1;
+}
+
+
+/* SLIDER -------------------------- */
+
+.slider {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.modalImage {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Prev & Next */
+.prevBtn,
+.nextBtn {
+    position: absolute;
+    top: 45%;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.45);
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5rem;
+    transition: 0.25s;
+}
+
+.prevBtn:hover,
+.nextBtn:hover {
+    background: rgba(0,0,0,0.7);
+}
+
+.prevBtn {
+    left: 10px;
+}
+
+.nextBtn {
+    right: 10px;
+}
+
+/* Dots */
+.dots {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 4px;
+    background: #555a76;
+    border-radius: 50%;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.dotActive {
+    background: #4b8bff;
+    transform: scale(1.3);
+}
+
+/* MODAL TEXT */
+.modalTitle {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.modalDesc {
+    opacity: 0.9;
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.modalTags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.tag {
+    background: #1c2033;
+    padding: 7px 14px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+}
+
+.modalButton {
+    display: inline-block;
+    background: #4b8bff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.modalButton:hover {
+    background: #6a9cff;
+}
+
+
+/* ===========================================================
+   ANIMATIONS (Scroll Reveal)
+   =========================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.7s ease;
+}
+
+.revealVisible {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+
+/* Modals */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popUp {
+    from { transform: scale(0.94); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+
+/* ===========================================================
+   RESPONSIVE 
+   =========================================================== */
+
+@media (max-width: 1024px) {
+    .projectGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skillGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}
+
+@media (max-width: 720px) {
+    .projectGrid, .skillGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .heroImage img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .title {
+        font-size: 2.4rem;
+    }
+
+    .modal {
+        width: 92%;
+    }
 }
