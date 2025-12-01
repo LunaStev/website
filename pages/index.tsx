@@ -274,7 +274,7 @@ export default function Home() {
                     <section id="contact" className={styles.contact}>
                         <div className={styles.contactContent}>
                             <div className={`${styles.contactInfo} ${styles.reveal}`}>
-                                <h2>Let's Build Something Amazing</h2>
+                                <h2>Let&apos;s Build Something Amazing</h2>
                                 <p>
                                     새로운 프로젝트, 협업 기회, 또는 단순한 인사라도 환영합니다.
                                     언제든지 연락 주세요!
@@ -475,10 +475,12 @@ function ProjectModal({
                         </div>
 
                         <div className={styles.slider}>
-                            <img
+                            <Image
                                 src={images[slideIndex]}
                                 className={styles.modalImage}
                                 alt={`${project.title} screenshot`}
+                                width={800}
+                                height={600}
                             />
 
                             <div className={styles.sliderControls}>
