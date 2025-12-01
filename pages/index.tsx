@@ -192,6 +192,7 @@ export default function Home() {
                     </p>
 
                     <div className={styles.techList}>
+                        <span className={styles.techItem}>Wave</span>
                         <span className={styles.techItem}>Rust</span>
                         <span className={styles.techItem}>C/C++</span>
                         <span className={styles.techItem}>Python</span>
