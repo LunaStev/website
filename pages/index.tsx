@@ -198,8 +198,7 @@ export default function Home() {
                         <span className={styles.techItem}>LLVM</span>
                         <span className={styles.techItem}>Compiler Design</span>
                         <span className={styles.techItem}>Operating Systems</span>
-                        <span className={styles.techItem}>Assembly</span>
-                        <span className={styles.techItem}>TypeScript</span>
+                        <span className={styles.techItem}>Assembly AMD64</span>
                     </div>
                 </section>
 
