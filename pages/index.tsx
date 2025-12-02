@@ -172,11 +172,11 @@ export default function Home() {
                     <h2 className={styles.sectionTitle}>Development Environment</h2>
 
                     <p className={styles.paragraph}>
-                        I am currently using a desktop PC purchased in 2019. It runs on a Ryzen 5 2600X CPU, an RTX 2060 GPU, and 32GB of memory. The operating system is Windows 10, and due to hardware limitations, upgrading to Windows 11 is not possible. While the machine is still usable, my actual development environment relies entirely on Ubuntu through Windows WSL, which is far from optimal.
+                        I am currently using a desktop PC purchased in 2019. It runs on a Ryzen 5 2600X CPU, an RTX 2060 GPU, and 32GB of memory. The operating system is Fedora, which I use as my primary environment for both daily tasks and development work.
                     </p>
 
                     <p className={styles.paragraph}>
-                        For this reason, I plan to switch to a Lenovo laptop in the future and migrate my main development environment from Windows 10 and Ubuntu WSL to a native Fedora setup. Moving away from Windows and WSL will allow me to work directly on Fedora, which aligns better with the nature of my projects. Most of my work is based on Linux or Unix systems, and since I already build and compile everything inside WSL, transitioning to a fully native Linux environment will not be an issue. Moreover, the difficulty of setting up a development environment on Fedora is quite similar to Ubuntu, making the switch straightforward.
+                        Since most of my projects are closely tied to Linux and Unix-based systems, Fedora provides a more native and efficient workflow compared to Windows or WSL. I already build and compile everything directly on Linux, and Fedora’s development setup is similar to Ubuntu, making it easy to configure the tools I need without any major issues.
                     </p>
                 </section>
 
