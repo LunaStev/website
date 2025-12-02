@@ -215,13 +215,11 @@ export default function Home() {
                     </div>
 
                     <p className={styles.paragraph}>
-                        Good software should be practical above all else. Theory matters,
-                        but ultimately it&apos;s the code that runs that changes the world.
+                        I agree deeply with this perspective—real impact comes from writing code that actually runs. But at the same time, I believe that software doesn’t need to be strictly practical to be meaningful. Even experimental or non-practical projects carry value, because they can inspire future ideas, teach important lessons, or evolve into something useful in ways we don’t expect.
                     </p>
 
                     <p className={styles.paragraph}>
-                        I value simplicity and clarity. Complex problems often have simple
-                        solutions—we just need to find them.
+                        Whether a project becomes widely used or eventually fades, the act of creating it still matters. Building something—anything—has intrinsic worth. That mindset drives my approach to development.
                     </p>
                 </section>
 
