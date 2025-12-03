@@ -33,7 +33,7 @@ export default function Home() {
                             GitHub
                         </a>
                         <a
-                            href="mailto:lunastev@gurmstudios.com"
+                            href="mailto:luna@lunastev.org"
                             className={styles.link}
                         >
                             Email
